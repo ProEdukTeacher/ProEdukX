@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Asistencia"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Asistencia"
+
+
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:queryHint="Search The Library"
+        android:inputType="text"
+        android:textColorHint="#000000"
+        android:background="@drawable/rounded_corner"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp" />
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+</FrameLayout>

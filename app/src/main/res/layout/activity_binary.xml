@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/classdialog"
+    android:layout_width="350dp"
+    android:layout_height="350dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/bluewhiteborder">
+
+    <ImageView
+        android:id="@+id/circlekeeper"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/circlebook"/>
+
+
+
+    <EditText
+
+        android:id="@+id/classtup"
+        android:background="@drawable/rounded_campos"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="12dp"
+        android:paddingTop="5dp"
+        android:textSize="24sp"
+        android:layout_below="@id/circlekeeper"
+        android:hint="@string/nombre_de_la_clase"
+        android:textColorHint="#727372"
+        android:paddingStart="15dp" />
+
+    <EditText
+
+        android:background="@drawable/rounded_campos"
+        android:id="@+id/Sectiones"
+        android:textColor="@color/black"
+        android:paddingLeft="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/classtup"
+        android:textSize="24sp"
+        android:paddingTop="5dp"
+        android:hint="@string/introduzca_el_grupo"
+        android:textColorHint="#727372"
+        android:paddingStart="15dp" />
+
+
+
+    <Button
+
+        android:id="@+id/addud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:text="@string/anadir"
+        android:layout_below="@id/Sectiones"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/selectedgreen"
+
+
+
+
+        />
+
+
+
+
+</RelativeLayout>

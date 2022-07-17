@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon"
+            android:title="Home" />
+
+        <item
+
+            android:id="@+id/dark_mode"
+            android:icon="@drawable/dark_mode_icon"
+            android:title="Dark Mode" />
+
+        <item
+            android:id="@+id/comp_trans"
+            android:icon="@drawable/computer_icon"
+            android:title="Transfer to Computer" />
+    </group>
+
+
+
+    <group>
+
+        <item android:title="¿Ya se va? :(">
+
+            <menu>
+
+                <group>
+
+                    <item android:title="Salir" android:icon="@drawable/logout_icon"
+                        android:id="@+id/logout_now"/>
+
+
+
+                </group>
+
+
+            </menu>
+
+
+        </item>
+
+
+    </group>
+
+
+</menu>

@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">ProEduk</string>
+    <string name ="elementos">Seleccione el nivel</string>
+    <string name ="select">Select Item</string>
+    <string name="user_name">Username</string>
+    <string name="menu_close">ProEduk</string>
+    <string name="menu_open">ProEduk</string>
+    <string name="proeduk_teaching_services">ProEduk Teaching Services</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN NOW</string>
+    <string name="create_an_account">Create An Account</string>
+    <string name="enter_user_name">Enter User Name</string>
+    <string name="enter_password">Enter password</string>
+    <string name="reg_strate">Regístrate</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="e_mail">E-Mail</string>
+    <string name="introduzca_una_contrase_a">Introduzca una contraseña</string>
+    <string name="confirme_su_contrase_a">Confirme su contraseña</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="ya_posee_una_cuenta_accese_aqu">¿Ya posee una cuenta? Accese aquí</string>
+    <string name="professor_judith">Professor Judith</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="notas">Notas</string>
+    <string name="nombre_de_la_clase">Nombre de la clase</string>
+    <string name="introduzca_el_grupo">Introduzca el grupo</string>
+    <string name="a_ade_una_clase">Añade una clase.</string>
+    <string name="add_class">Add Class</string>
+    <string name="add_a_class">Add A Class</string>
+    <string name="title_activity_directing1">Directing1</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="anadir">Añadir</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="todo">TODO</string>
+    <string name="welcome_to_plans">Welcome to Plans</string>
+    <string name="utilice_la_barra_de_b_squeda_para_buscar_planes_y_materiales">Utilice la barra de búsqueda para buscar planes y materiales.</string>
+    <string name="username">Username</string>
+
+    //Headings
+    <string name="heading_one">Planifica Tus Lecciones</string>
+    <string name="heading_two">Conéctate En Tu Computadora</string>
+    <string name="heading_three">Amplia Biblioteca</string>
+    <string name="heading_fourth">Maximiza Tu Tiempo</string>
+
+    //Description
+    <string name="desc_one">Un excelente servicio de organización y planificación semanal para el maestro. </string>
+    <string name="desc_two">¿Prefieres utilizar los servicios de ProEduk en computadora? Utiliza los servicios integrados en diferentes dispositivos. </string>
+    <string name="desc_three">Busca el plan o recurso que necesites utilizando una biblioteca amplia; integra fotos, documentos, quiz y exámenes.</string>
+    <string name="desc_fourth">¡Ejerce control de tu tiempo! ProEduk Teaching Services provee la capacidad para reducir el tiempo que toma planificar hasta un 75%</string>
+
+</resources>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Splashzone"
+    android:background="@drawable/uls"
+    >
+
+
+    <ImageView
+        android:id="@+id/cloverimg"
+        android:layout_width="216dp"
+        android:layout_height="209dp"
+        android:layout_marginTop="-8dp"
+        android:layout_marginEnd="0dp"
+        android:elevation="6dp"
+        android:src="@drawable/logotreal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/accbtn"
+        android:layout_width="378dp"
+        android:layout_height="175dp"
+        android:layout_marginBottom="80dp"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cloverimg">
+
+        <Button
+            android:id="@+id/accessbnn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="112dp"
+            android:background="@drawable/custom_change"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="✎ Accesar"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/registobtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/custom_change"
+            android:text="⌨ Registrarse"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:textStyle="bold"
+
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/splashtext"
+        android:layout_width="377dp"
+        android:layout_height="138dp"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="ProEduk"
+            android:textColor="#fff"
+            android:textSize="31sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_marginStart="5dp"
+            android:text="★ Mejor Educación, Mas Tiempo"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:textStyle="bold"
+
+            />
+
+
+    </LinearLayout>
+
+    <!--Menu-->
+
+
+    <LinearLayout
+        android:id="@+id/hometext"
+        android:layout_width="349dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="48dp"
+        android:elevation="6dp"
+        android:gravity="left"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:text="ProEduk"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="31sp"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:layout_width="307dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="30dp"
+            android:text="★ Calidad de vida del maestro"
+            android:textColor="#fff"
+            android:textSize="22sp"
+            android:textStyle="italic"
+
+            />
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/bgapp"
+        android:layout_width="580dp"
+        android:layout_height="850dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bgapp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
