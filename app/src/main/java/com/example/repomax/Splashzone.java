@@ -17,7 +17,6 @@ public class Splashzone extends AppCompatActivity {
     Animation frombottom;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +39,11 @@ public class Splashzone extends AppCompatActivity {
 
         frombottom = AnimationUtils.loadAnimation(this, R.anim.frombottom);
 
-        bgapp =  findViewById(R.id.bgapp);
-        cloverimg =  findViewById(R.id.cloverimg);
-        splashtext =  findViewById(R.id.splashtext);
-        hometext =  findViewById(R.id.hometext);
-        accbtn =  findViewById(R.id.accbtn);
+        bgapp = findViewById(R.id.bgapp);
+        cloverimg = findViewById(R.id.cloverimg);
+        splashtext = findViewById(R.id.splashtext);
+        hometext = findViewById(R.id.hometext);
+        accbtn = findViewById(R.id.accbtn);
 
         bgapp.animate().translationY(-1200).setDuration(2000).setStartDelay(300);
         cloverimg.animate().alpha(0).setDuration(2000).setStartDelay(600);

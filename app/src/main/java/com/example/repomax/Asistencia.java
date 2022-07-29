@@ -108,8 +108,6 @@ public class Asistencia extends Fragment implements Binary.OnInputSelected {
         View rootView = inflater.inflate(R.layout.fragment_asistencia, container, false);
 
 
-
-
         return rootView;
 
     }

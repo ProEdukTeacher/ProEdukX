@@ -20,8 +20,9 @@
         android:roundIcon="@mipmap/the_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge">
-        <activity android:name=".getstarted1" />
-        <activity android:name=".Splashzone">
+        <activity android:name=".getstarted1" android:noHistory="true"/>
+        <activity android:name=".Splashzone" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

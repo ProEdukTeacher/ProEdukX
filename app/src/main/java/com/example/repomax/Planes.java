@@ -1,5 +1,7 @@
 package com.example.repomax;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,13 +16,18 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 
 
 public class Planes extends Fragment {
 
 
+
+
     private static final String TAG = "Planes fragment";
+
     RecyclerView recyclerView;
     RecyclerView.Adapter myAdapter;
     RecyclerView.LayoutManager layoutManager;
@@ -35,20 +42,9 @@ public class Planes extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_planes, container, false);
-
-        fab = rootView.findViewById(R.id.fab);
-        fab.setOnClickListener(v -> {
-            Log.d(TAG, "onClick: Abriendo Ventanilla");
-
-            Binary dialog = new Binary();
-            dialog.setTargetFragment(Planes.this, 1);
-            dialog.show(getParentFragmentManager(), "Binary");
-
-        });
 
 
-        return rootView;
+        return inflater.inflate(R.layout.fragment_planes, container, false);
     }
 
 
@@ -65,11 +61,23 @@ public class Planes extends Fragment {
         myAdapter = new PersonAdapter(getContext(), ApplicationClass.materias);
         recyclerView.setAdapter(myAdapter);
 
+        fab = view.findViewById(R.id.fab);
+
+
+        fab.setOnClickListener(v -> {
+            Log.d(TAG, "onClick: Abriendo Ventanilla");
+
+
+            Binary dialog = new Binary((PersonAdapter) myAdapter);
+            dialog.setTargetFragment(Planes.this, 1);
+            dialog.show(getParentFragmentManager(), "Binary");
+
+        });
+
+
+
 
     }
-
-
-
 
 
 }

@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/Asistencia"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Asistencia"
 
 
     >
 
-    <!-- TODO: Update blank fragment layout -->
-    <SearchView
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/Asistencia"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:queryHint="Search The Library"
-        android:inputType="text"
-        android:textColorHint="#000000"
-        android:background="@drawable/rounded_corner"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".Asistencia">
+
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:searchHintIcon="@drawable/ic_search"
+            android:background="@drawable/custom_input"
+            />
 
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        >
-
-
-
-
-    </RelativeLayout>
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/xlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:clipToPadding="false"
+            android:padding="4dp"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="insideOverlay"
+            android:verticalScrollbarPosition="right" />
 
 
+    </LinearLayout>
 
-</FrameLayout>
+
+</androidx.core.widget.NestedScrollView>

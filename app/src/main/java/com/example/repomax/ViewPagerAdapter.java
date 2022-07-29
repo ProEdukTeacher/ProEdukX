@@ -40,7 +40,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     };
 
-    public ViewPagerAdapter(Context context){
+    public ViewPagerAdapter(Context context) {
 
         this.context = context;
     }
@@ -59,7 +59,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.slider_layout, container,false);
+        View view = layoutInflater.inflate(R.layout.slider_layout, container, false);
 
         ImageView slidetitleimage = (ImageView) view.findViewById(R.id.titleImage);
         TextView slideHeading = (TextView) view.findViewById(R.id.title_txt);
@@ -74,14 +74,12 @@ public class ViewPagerAdapter extends PagerAdapter {
         return view;
 
 
-
-
     }
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
 
-        container.removeView((LinearLayout)object);
+        container.removeView((LinearLayout) object);
 
     }
 }

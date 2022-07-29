@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
     Button goback;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, Splashzone.class);
             startActivity(intent);
         });
-
-
 
 
     }

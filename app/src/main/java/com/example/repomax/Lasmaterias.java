@@ -10,6 +10,8 @@ public class Lasmaterias {
         this.telNr = telNr;
     }
 
+
+
     public String getName() {
         return name;
     }

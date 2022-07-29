@@ -7,6 +7,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -43,7 +45,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
-
+    Button btndrawer;
     TabLayout tabLayout;
     ViewPager viewPager;
     Toolbar toolbar;
@@ -51,7 +53,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Button addClass, cancelClass;
     Planes planes;
     FragmentManager fragmentManager;
-
 
 
     @Override
@@ -63,13 +64,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         //Assign variable
 
+
         fragmentManager = this.getSupportFragmentManager();
-        className= findViewById(R.id.classtup);
-        SectionName= findViewById(R.id.Sectiones);
+        className = findViewById(R.id.classtup);
+        SectionName = findViewById(R.id.Sectiones);
         tabLayout = findViewById(R.id.tab_layout);
-        drawerLayout= findViewById(R.id.drawing_layout);
-        navigationView=findViewById(R.id.navigationView);
-        actionBarDrawerToggle= new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_open,R.string.menu_close);
+        drawerLayout = findViewById(R.id.drawing_layout);
+        navigationView = findViewById(R.id.navigationView);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_open, R.string.menu_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         navigationView.setNavigationItemSelectedListener(item -> {
@@ -98,25 +100,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         });
 
 
-
-
-
-
-        viewPager = findViewById(R.id.view_pager);
         toolbar = findViewById(R.id.toolbar);
+        viewPager = findViewById(R.id.view_pager);
         setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
         Objects.requireNonNull(getSupportActionBar()).setTitle("ProEduk \uD83E\uDD89");
-
-
-
-
-
-
-
-
-
-
-
 
 
         //Initialize adapter
@@ -124,21 +115,20 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         //Initialize main fragment
         //Add fragments
 
-        adapter.addFragment(new Planes(),"Planes");
-        adapter.addFragment(new Asistencia(),"Asistencia/Grupos");
-        adapter.addFragment(new Notas(),"Notas");
+        adapter.addFragment(new Planes(), "Planes");
+        adapter.addFragment(new Asistencia(), "Asistencia/Grupos");
+        adapter.addFragment(new Notas(), "Notas");
         //Set adapter
         viewPager.setAdapter(adapter);
         //Connect tablayout with viewpager
         tabLayout.setupWithViewPager(viewPager);
 
 
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
@@ -146,41 +136,36 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id==R.id.share) {
+        if (id == R.id.share) {
             Toast.makeText(getApplicationContext(), "Presionaste Compartir", Toast.LENGTH_SHORT).show();
-            
-        }else if (id==R.id.about) {
+
+        } else if (id == R.id.about) {
             Toast.makeText(getApplicationContext(), "Presionaste Acerca", Toast.LENGTH_SHORT).show();
 
 
-        }else if (id==R.id.exit) {
+        } else if (id == R.id.exit) {
             Toast.makeText(getApplicationContext(), "Presionaste Cerrar", Toast.LENGTH_SHORT).show();
 
-        }else if (id==R.id.search) {
+        } else if (id == R.id.search) {
 
             Toast.makeText(getApplicationContext(), "Presionaste Buscar", Toast.LENGTH_SHORT).show();
 
-        }else if (id==R.id.settings) {
+        } else if (id == R.id.settings) {
 
             Toast.makeText(getApplicationContext(), "Presionaste Configuración", Toast.LENGTH_SHORT).show();
-        }else if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+        } else if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
 
 
-
-
-        return true;
+            return super.onOptionsItemSelected(item);
         }
         return true;
-
-
-
-
 
 
     }
 
     @Override
     public void onClick(View v) {
+
 
     }
 
@@ -189,15 +174,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private class MainAdapter extends FragmentPagerAdapter{
+    private class MainAdapter extends FragmentPagerAdapter {
         //Initialize array list
         List<Fragment> fragmentList = new ArrayList<>();
         List<String> stringList = new ArrayList<>();
         int[] imageList = {R.drawable.ic_baseline_book_24, R.drawable.ic_baseline_rule_folder_24,
-         R.drawable.ic_baseline_star_24};
+                R.drawable.ic_baseline_star_24};
 
         //Create constructor
-        public void addFragment(Fragment fragment,String s){
+        public void addFragment(Fragment fragment, String s) {
             //Add fragment
             fragmentList.add(fragment);
             //Add string
@@ -229,16 +214,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             Drawable drawable = ContextCompat.getDrawable(getApplicationContext()
                     , imageList[position]);
             //Set bound
-            drawable.setBounds(0,0,drawable.getIntrinsicWidth(),
+            drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),
                     drawable.getIntrinsicHeight());
             //Initialize spannable string
-            SpannableString spannableString = new SpannableString(" "+
+            SpannableString spannableString = new SpannableString(" " +
                     stringList.get(position));
             //Initialize image span
             ImageSpan imageSpan = new ImageSpan(drawable,
                     ImageSpan.ALIGN_BOTTOM);
             //Set span
-            spannableString.setSpan(imageSpan, 0,1
+            spannableString.setSpan(imageSpan, 0, 1
                     , Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             //Return spannable string
             return spannableString;
@@ -246,10 +231,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             //Return tab title
 
         }
-    }
-
-
-
 
     }
 
+
+}

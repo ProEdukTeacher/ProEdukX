@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,9 @@
     android:background="@drawable/coloridus"
     android:orientation="vertical"
     tools:context=".RegisterActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/poppins"
-                    android:text="Register"
+                    android:text="Registrarse"
                     android:textColor="#00a5ff"
                     android:textSize="30sp"
                     android:textStyle="bold" />
@@ -64,7 +67,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Username"
+                    android:text="Nombre de Usuario"
                     android:textColor="#00a5ff"
                     android:textSize="20dp" />
 
@@ -72,6 +75,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Escriba su nombre de usuario" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="E-mail"
+                    android:textColor="#00a5ff"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Provea su correo electrónico" />
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -101,10 +117,10 @@
 
 
                 <TextView
-
+                    android:id="@+id/pruebita"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Seleccione Nivel Academico"
+                    android:text="Nivel Academico"
                     android:textColor="#00a5ff"
                     android:textSize="20dp" />
 
@@ -114,42 +130,56 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_input"
                     android:hint="Seleccione Nivel(es)"
-                    android:padding="12dp" />
+                    android:padding="12dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Seleccione Grupos"
+                    android:text="Grado(s)"
                     android:textColor="#00a5ff"
                     android:textSize="20dp" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/registerRV"
+                <TextView
+                    android:id="@+id/tvgrad"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    
-                </androidx.recyclerview.widget.RecyclerView>
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_input"
+                    android:hint="Seleccione Grado(s)"
+                    android:padding="12dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Contraseña"
+                    android:text="Clases Impartidas"
                     android:textColor="#00a5ff"
                     android:textSize="20dp" />
 
-                <EditText
+                <TextView
+                    android:id="@+id/tvcli"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Escriba su contraseña" />
+                    android:background="@drawable/custom_input"
+                    android:hint="Seleccione Clase(s)"
+                    android:padding="12dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <Button
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:text="Forgot password?"
-                    android:textColor="#00a5ff" />
+                    android:background="@drawable/changeag_btn"
+                    android:hint="Registrar Datos" />
+
+
+
 
 
             </LinearLayout>
@@ -162,3 +192,8 @@
 
 
 </RelativeLayout>
+
+
+
+
+</androidx.core.widget.NestedScrollView>
