@@ -1,5 +1,8 @@
 package com.example.repomax;
 
+import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,14 +17,28 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Objects;
+
+
 public class Binary extends AppCompatDialogFragment {
 
-
-
+    private PersonAdapter adapter;
 
 
 
     private static final String TAG = "Binary Dialog";
+
+    public Binary(PersonAdapter adapter) {
+        this.adapter = adapter;
+        loadData();
+
+
+    }
 
 
     private void onClick(View v) {
@@ -34,6 +51,10 @@ public class Binary extends AppCompatDialogFragment {
 
             ApplicationClass.materias.add(new Lasmaterias(classtup.getText().toString().trim(),
                     Sectiones.getText().toString().trim()));
+
+            adapter.addMaterias(new Lasmaterias(classtup.getText().toString().trim(),
+                    Sectiones.getText().toString().trim()));
+            saveData();
             Toast.makeText(getContext(), "Clase Registrada", Toast.LENGTH_SHORT).show();
 
             classtup.setText(null);
@@ -42,16 +63,33 @@ public class Binary extends AppCompatDialogFragment {
 
 
 
-
-
-
-
             dismiss();
 
 
+        } 
+
+
+
+    }
+
+    private void saveData() {
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(mlasmaterias);
+        editor.putString("task list", json);
+        editor.apply();
+    }
+    private void loadData(){
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("task list", null);
+        Type type = new TypeToken<ArrayList<Lasmaterias>>() {}.getType();
+        mlasmaterias = gson.fromJson(json, type);
+
+        if (mlasmaterias == null) {
+            mlasmaterias = new ArrayList<>();
         }
-
-
 
     }
 
@@ -69,6 +107,8 @@ public class Binary extends AppCompatDialogFragment {
     //Widgets
 
     private
+
+    ArrayList<Lasmaterias> mlasmaterias;
     RecyclerView.Adapter myAdapter;
     TextView Title;
     EditText classtup, Sectiones;
@@ -77,12 +117,12 @@ public class Binary extends AppCompatDialogFragment {
     FragmentManager fragmentManager;
 
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_binary, container, false);
 
+        myAdapter = new PersonAdapter(getContext(), ApplicationClass.materias);
         classtup = view.findViewById(R.id.classtup);
         Sectiones = view.findViewById(R.id.Sectiones);
         fragmentManager = getParentFragmentManager();
@@ -97,9 +137,9 @@ public class Binary extends AppCompatDialogFragment {
         return view;
     }
 
-    protected void NotifyChanges() {
-        myAdapter.notifyDataSetChanged();
-}}
+}
+
+
 
 
 
