@@ -5,6 +5,9 @@ import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -17,12 +20,27 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder> {
-
-
+public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.LasmateriasViewHolder> {
+    private OnItemClickListener listener;
     private ArrayList<Lasmaterias> materias;
     private Context context;
     private PersonAdapter adapter;
+
+    public void setOnItemClickListener(AdapterView.OnItemClickListener onItemClickListener) {
+    }
+
+    public interface OnItemClickListener {
+        void OnItemClick(int position);
+        void OnDeleteClick(int position);
+    }
+    //now a method
+
+    public void SetOnItemClickListener(OnItemClickListener clickListener) {
+
+        listener=clickListener;
+    }
+
+
 
     public PersonAdapter(Context context, ArrayList<Lasmaterias> list) {
 
@@ -32,34 +50,50 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
 
     }
 
+
     public void addMaterias(Lasmaterias lasmaterias) {
 
 
         notifyDataSetChanged();
 
 
+
     }
 
 
 
+    public class LasmateriasViewHolder extends RecyclerView.ViewHolder {
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvName;
         TextView tvGroup;
+        Button thebtn;
+
+        public LasmateriasViewHolder(@NonNull View itemView, OnItemClickListener listener) {
 
 
-        public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+
+            thebtn=itemView.findViewById(R.id.image_delete);
+            thebtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.OnItemClick(getBindingAdapterPosition());
+
+                }
+            });
             tvName = itemView.findViewById(R.id.tvName);
             tvGroup = itemView.findViewById(R.id.TvPass);
+
 
 
             itemView.setOnClickListener(v -> {
 
 
+
             });
+
 
 
         }
@@ -68,19 +102,27 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
     }
 
 
+
+
+
     @NonNull
     @Override
-    public PersonAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public PersonAdapter.LasmateriasViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        
+
+
+
+
 
 
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.class_item, viewGroup, false);
 
-        return new ViewHolder(view);
+        return new LasmateriasViewHolder(view, listener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PersonAdapter.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull PersonAdapter.LasmateriasViewHolder viewHolder, int position) {
 
         viewHolder.itemView.setTag(materias.get(position));
         viewHolder.tvName.setText(materias.get(position).getName());
@@ -92,7 +134,11 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
 
 
 
+
+
+
     }
+
 
 
 
@@ -100,11 +146,15 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
     @Override
 
 
+
     public int getItemCount() {
+
+
 
 
         return materias.size();
     }
+
 }
 
 

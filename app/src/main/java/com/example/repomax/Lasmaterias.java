@@ -1,7 +1,9 @@
 package com.example.repomax;
 
-public class Lasmaterias {
+import java.util.ArrayList;
 
+public class Lasmaterias {
+    private static ArrayList<Lasmaterias> lasmaterias = new ArrayList<>();
     private String name;
     private String telNr;
 
@@ -11,6 +13,13 @@ public class Lasmaterias {
     }
 
 
+    public static ArrayList<Lasmaterias> getLasmaterias() {
+        return lasmaterias;
+    }
+
+    public static void setLasmateriasArrayList(Lasmaterias p) {
+        Lasmaterias.lasmaterias.add(p);
+    }
 
     public String getName() {
         return name;

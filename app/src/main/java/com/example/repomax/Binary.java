@@ -27,18 +27,22 @@ import java.util.Objects;
 
 public class Binary extends AppCompatDialogFragment {
 
+    private Context mContext;
     private PersonAdapter adapter;
 
 
 
     private static final String TAG = "Binary Dialog";
 
-    public Binary(PersonAdapter adapter) {
+    public Binary(PersonAdapter adapter, Context context) {
         this.adapter = adapter;
-        loadData();
+        this.mContext = context;
+
+
 
 
     }
+
 
 
     private void onClick(View v) {
@@ -54,7 +58,15 @@ public class Binary extends AppCompatDialogFragment {
 
             adapter.addMaterias(new Lasmaterias(classtup.getText().toString().trim(),
                     Sectiones.getText().toString().trim()));
-            saveData();
+            Gson gson = new Gson();
+
+            String jsonString = gson.toJson(materias);
+            SharedPreferences sharedPreferences = requireContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.putString("SP_KEY", jsonString);
+            editor.apply();
+
+
             Toast.makeText(getContext(), "Clase Registrada", Toast.LENGTH_SHORT).show();
 
             classtup.setText(null);
@@ -72,26 +84,8 @@ public class Binary extends AppCompatDialogFragment {
 
     }
 
-    private void saveData() {
-        SharedPreferences sharedPreferences = getContext().getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(mlasmaterias);
-        editor.putString("task list", json);
-        editor.apply();
-    }
-    private void loadData(){
-        SharedPreferences sharedPreferences = getContext().getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = sharedPreferences.getString("task list", null);
-        Type type = new TypeToken<ArrayList<Lasmaterias>>() {}.getType();
-        mlasmaterias = gson.fromJson(json, type);
 
-        if (mlasmaterias == null) {
-            mlasmaterias = new ArrayList<>();
-        }
 
-    }
 
 
 
@@ -108,7 +102,8 @@ public class Binary extends AppCompatDialogFragment {
 
     private
 
-    ArrayList<Lasmaterias> mlasmaterias;
+    SharedPreferences sharedPreferences;
+    ArrayList<ApplicationClass> materias;
     RecyclerView.Adapter myAdapter;
     TextView Title;
     EditText classtup, Sectiones;
