@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,22 +53,22 @@ public class Binary extends AppCompatDialogFragment {
 
 
         } else {
-
+            saveData();
             ApplicationClass.materias.add(new Lasmaterias(classtup.getText().toString().trim(),
                     Sectiones.getText().toString().trim()));
 
+
             adapter.addMaterias(new Lasmaterias(classtup.getText().toString().trim(),
                     Sectiones.getText().toString().trim()));
-            Gson gson = new Gson();
-
-            String jsonString = gson.toJson(materias);
-            SharedPreferences sharedPreferences = requireContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor=sharedPreferences.edit();
-            editor.putString("SP_KEY", jsonString);
-            editor.apply();
 
 
-            Toast.makeText(getContext(), "Clase Registrada", Toast.LENGTH_SHORT).show();
+
+
+
+
+            Toast toast = Toast.makeText(getContext(),"Clase Registrada", Toast.LENGTH_SHORT);
+            toast.show();
+
 
             classtup.setText(null);
             Sectiones.setText(null);
@@ -81,6 +82,16 @@ public class Binary extends AppCompatDialogFragment {
         } 
 
 
+
+    }
+
+    private void saveData(){
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(ApplicationClass.materias);
+        editor.putString("SP_KEY", jsonString);
+        editor.apply();
 
     }
 

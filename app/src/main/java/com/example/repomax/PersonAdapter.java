@@ -25,21 +25,19 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.Lasmateria
     private ArrayList<Lasmaterias> materias;
     private Context context;
     private PersonAdapter adapter;
-
-    public void setOnItemClickListener(AdapterView.OnItemClickListener onItemClickListener) {
-    }
+    private View view;
 
     public interface OnItemClickListener {
         void OnItemClick(int position);
+
         void OnDeleteClick(int position);
     }
     //now a method
 
     public void SetOnItemClickListener(OnItemClickListener clickListener) {
 
-        listener=clickListener;
+        listener = clickListener;
     }
-
 
 
     public PersonAdapter(Context context, ArrayList<Lasmaterias> list) {
@@ -61,7 +59,6 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.Lasmateria
     }
 
 
-
     public class LasmateriasViewHolder extends RecyclerView.ViewHolder {
 
 
@@ -75,7 +72,8 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.Lasmateria
             super(itemView);
 
 
-            thebtn=itemView.findViewById(R.id.image_delete);
+
+            thebtn = itemView.findViewById(R.id.image_delete);
             thebtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -87,13 +85,10 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.Lasmateria
             tvGroup = itemView.findViewById(R.id.TvPass);
 
 
-
             itemView.setOnClickListener(v -> {
 
 
-
             });
-
 
 
         }
@@ -102,23 +97,17 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.Lasmateria
     }
 
 
-
-
-
     @NonNull
     @Override
     public PersonAdapter.LasmateriasViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        
 
 
-
-
-
-
-        View view = LayoutInflater.from(viewGroup.getContext())
+        view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.class_item, viewGroup, false);
 
+
         return new LasmateriasViewHolder(view, listener);
+
     }
 
     @Override
@@ -130,31 +119,17 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.Lasmateria
 
 
 
-
-
-
-
-
-
-
     }
-
-
-
 
 
     @Override
 
 
-
     public int getItemCount() {
-
-
-
 
         return materias.size();
     }
 
+
+   
 }
-
-

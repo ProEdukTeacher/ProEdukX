@@ -76,6 +76,8 @@ public class Planes extends Fragment {
         myAdapter = new PersonAdapter(getContext(), ApplicationClass.materias);
 
 
+        recyclerView.setAdapter(myAdapter);
+
 
         fab = view.findViewById(R.id.fab);
 
@@ -94,6 +96,7 @@ public class Planes extends Fragment {
 
 
     }
+
 
     private void loadData() {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());

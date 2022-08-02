@@ -14,14 +14,29 @@ import java.util.function.ToDoubleBiFunction;
 public class ApplicationClass extends Application {
 
 
+
     public static ArrayList<Lasmaterias> materias;
+
+
 
 
     @Override
     public void onCreate() {
         super.onCreate();
 
+        loadData();
+
+
         materias = new ArrayList<>();
+        materias.add(new Lasmaterias("Español", "Noveno Grado"));
+        materias.add(new Lasmaterias("Español", "Octavo Grado"));
+        materias.add(new Lasmaterias("Español", "Séptimo Grado"));
+        materias.add(new Lasmaterias("Español", "Sexto Grado"));
+        materias.add(new Lasmaterias("Español", "Quinto Grado"));
+
+
+
+
 
 
 
@@ -30,5 +45,14 @@ public class ApplicationClass extends Application {
 
 
     }
+    private void loadData(){
+        SharedPreferences sharedPreferences = getSharedPreferences("Shared Preferences", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("SP_KEY", null);
+        Type type = new TypeToken<ArrayList<Lasmaterias>>() {}.getType();
+        materias = gson.fromJson(json, type);
+        }
 
-}
+    }
+
+
