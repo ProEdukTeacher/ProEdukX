@@ -38,10 +38,6 @@ public class Binary extends AppCompatDialogFragment {
     public Binary(PersonAdapter adapter, Context context) {
         this.adapter = adapter;
         this.mContext = context;
-
-
-
-
     }
 
 
@@ -60,11 +56,6 @@ public class Binary extends AppCompatDialogFragment {
 
             adapter.addMaterias(new Lasmaterias(classtup.getText().toString().trim(),
                     Sectiones.getText().toString().trim()));
-
-
-
-
-
 
             Toast toast = Toast.makeText(getContext(),"Clase Registrada", Toast.LENGTH_SHORT);
             toast.show();

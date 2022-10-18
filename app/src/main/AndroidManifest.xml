@@ -21,7 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <activity android:name=".getstarted1" android:noHistory="true"/>
-        <activity android:name=".Splashzone" >
+        <activity android:name=".Splashzone"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +31,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".PreMain" />
-        <activity android:name=".Binary" />
         <activity android:name=".TeachMenu" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".RegisterActivity" />
