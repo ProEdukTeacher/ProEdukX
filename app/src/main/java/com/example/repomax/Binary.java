@@ -49,13 +49,15 @@ public class Binary extends AppCompatDialogFragment {
 
 
         } else {
-            saveData();
+
             ApplicationClass.materias.add(new Lasmaterias(classtup.getText().toString().trim(),
                     Sectiones.getText().toString().trim()));
 
 
             adapter.addMaterias(new Lasmaterias(classtup.getText().toString().trim(),
                     Sectiones.getText().toString().trim()));
+
+           /* Todo: Save the data here to firebase */
 
             Toast toast = Toast.makeText(getContext(),"Clase Registrada", Toast.LENGTH_SHORT);
             toast.show();
@@ -75,18 +77,6 @@ public class Binary extends AppCompatDialogFragment {
 
 
     }
-
-    private void saveData(){
-        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor=sharedPreferences.edit();
-        Gson gson = new Gson();
-        String jsonString = gson.toJson(ApplicationClass.materias);
-        editor.putString("SP_KEY", jsonString);
-        editor.apply();
-
-    }
-
-
 
 
 

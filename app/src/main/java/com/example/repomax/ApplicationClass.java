@@ -24,7 +24,7 @@ public class ApplicationClass extends Application {
     public void onCreate() {
         super.onCreate();
 
-        loadData();
+        /* Todo: Load the data here from firebase */
 
 
         materias = new ArrayList<>();
@@ -35,23 +35,7 @@ public class ApplicationClass extends Application {
         materias.add(new Lasmaterias("Español", "Quinto Grado"));
 
 
-
-
-
-
-
-
-
-
-
     }
-    private void loadData(){
-        SharedPreferences sharedPreferences = getSharedPreferences("Shared Preferences", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = sharedPreferences.getString("SP_KEY", null);
-        Type type = new TypeToken<ArrayList<Lasmaterias>>() {}.getType();
-        materias = gson.fromJson(json, type);
-        }
 
     }
 
