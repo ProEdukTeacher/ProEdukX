@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "375387344637",
+    "project_id": "proeduk-eb170",
+    "storage_bucket": "proeduk-eb170.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375387344637:android:8eb605ef06ab7043fab894",
+        "android_client_info": {
+          "package_name": "Proeduk_01.NEW"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375387344637-cu541l73ce8utactbpbtdc0r90v49nqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt1-IfSNN2p_yeLImTaX-x72XSwtIhc_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375387344637-cu541l73ce8utactbpbtdc0r90v49nqu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
