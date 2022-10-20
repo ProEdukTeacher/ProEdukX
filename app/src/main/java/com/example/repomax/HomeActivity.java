@@ -1,5 +1,6 @@
 package com.example.repomax;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +55,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Button addClass, cancelClass;
     Planes planes;
     FragmentManager fragmentManager;
+    FirebaseAuth mAuth;
 
 
     @Override
@@ -64,10 +67,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         //Assign variable
 
-
+        mAuth= FirebaseAuth.getInstance();
         fragmentManager = this.getSupportFragmentManager();
-        className = findViewById(R.id.classtup);
-        SectionName = findViewById(R.id.Sectiones);
+
         tabLayout = findViewById(R.id.tab_layout);
         drawerLayout = findViewById(R.id.drawing_layout);
         navigationView = findViewById(R.id.navigationView);
@@ -93,6 +95,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
                     Log.i("Trans_comp_tag", "Hote item is clicked");
                     drawerLayout.closeDrawer(GravityCompat.START);
+
+                case R.id.logout_now:
+
+                    Log.i("Log_Out_tag","Loging Out");
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    mAuth.signOut();
+                    startActivity(new Intent(HomeActivity.this, MainActivity.class));
             }
 
 

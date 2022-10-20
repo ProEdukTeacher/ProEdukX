@@ -56,12 +56,5 @@ public class Splashzone extends AppCompatActivity {
         accbtn.startAnimation(frombottom);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user==null){
-            startActivity(new Intent(Splashzone.this,RegisterActivity.class));
-        }
-    }
+
 }
