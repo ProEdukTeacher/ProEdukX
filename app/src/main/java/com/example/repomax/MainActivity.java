@@ -21,8 +21,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     Button goback, btn1Log;
-    FirebaseAuth mAuth;
     EditText LogEmail, LogPassword;
+    FirebaseAuth mAuth;
 
 
 
@@ -34,9 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Button button2 = findViewById(R.id.btn1);
         button2.setOnClickListener(v -> {
 
-            loginUser();
-            Intent intent = new Intent(this, getstarted1.class);
-            startActivity(intent);
+       loginUser();
         });
 
         Button goback = findViewById(R.id.gobacktoit);
@@ -45,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        LogEmail.findViewById(R.id.LoginEmails);
-        LogPassword.findViewById(R.id.LoginPasswords);
+        LogEmail = findViewById(R.id.LoginEmails);
+        LogPassword = findViewById(R.id.LoginPasswords);
 
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = SessionManager.getInstance().getmAuth();
 
 
     }
@@ -71,6 +69,13 @@ public class MainActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     Toast.makeText(MainActivity.this, "Inicio de Sesion", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, HomeActivity.class));
+
+                    /** Shoould update a value to database to know if its run or not run
+                     as the user wont be bothered to read the get started after each login */
+//                    Intent intent = new Intent(this, getstarted1.class);
+//                    startActivity(intent);
+
+
                 }else {
 
                     Toast.makeText(MainActivity.this, "Error en Inicio de Sesion" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -84,12 +89,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user==null){
-            startActivity(new Intent(MainActivity.this,HomeActivity.class));
-        }
-    }
 }
