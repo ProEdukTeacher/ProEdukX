@@ -14,6 +14,7 @@ import java.util.function.ToDoubleBiFunction;
 public class ApplicationClass extends Application {
 
 
+    public SessionManager mySession;
 
     public static ArrayList<Lasmaterias> materias;
 
@@ -23,6 +24,7 @@ public class ApplicationClass extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        mySession = SessionManager.getInstance();
 
         /* Todo: Load the data here from firebase */
 
@@ -33,6 +35,7 @@ public class ApplicationClass extends Application {
 
 
     }
+
 
     }
 

@@ -22,7 +22,7 @@ import javax.security.auth.login.LoginException;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button goback;
+    Button goback, btn1Log;
     FirebaseAuth mAuth;
     EditText LogEmail, LogPassword;
 
@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(v -> {
             Intent intent = new Intent(this, getstarted1.class);
             startActivity(intent);
-            loginUser();
         });
 
         Button goback = findViewById(R.id.gobacktoit);
@@ -46,11 +45,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        EditText LogEmail = findViewById(R.id.LoginEmails);
-        EditText LogPassword= findViewById(R.id.LoginPasswords);
+        LogEmail.findViewById(R.id.LoginEmails);
+        LogPassword.findViewById(R.id.LoginPasswords);
 
         mAuth = FirebaseAuth.getInstance();
+        btn1Log.setOnClickListener(view -> {
 
+            loginUser();
+        });
     }
     private void loginUser(){
 
@@ -84,5 +86,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user==null){
+            startActivity(new Intent(MainActivity.this,HomeActivity.class));
+        }
+    }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -24,6 +25,8 @@ public class Splashzone extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+       checkifUserIsAuthOrNot();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashzone);
         Button btnre = findViewById(R.id.registobtn);
@@ -53,6 +56,15 @@ public class Splashzone extends AppCompatActivity {
         splashtext.animate().translationY(140).alpha(0).setDuration(2000).setStartDelay(600);
         hometext.startAnimation(frombottom);
         accbtn.startAnimation(frombottom);
+    }
+
+    private void checkifUserIsAuthOrNot() {
+
+        if(SessionManager.getInstance().getmAuth().getCurrentUser()!=null) {
+            Log.d("Test", "checkifUserIsAuthOrNot: "+ SessionManager.getInstance().getmAuth().getCurrentUser());
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+        }
     }
 
 
