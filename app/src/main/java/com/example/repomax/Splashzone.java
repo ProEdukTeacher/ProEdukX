@@ -10,18 +10,21 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class Splashzone extends AppCompatActivity {
 
     ImageView bgapp, cloverimg;
     LinearLayout splashtext, hometext, accbtn;
     Animation frombottom;
+    FirebaseAuth mAuth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashzone);
-
         Button btnre = findViewById(R.id.registobtn);
         btnre.setOnClickListener(v -> {
             Intent intent = new Intent(this, RegisterActivity.class);
@@ -29,6 +32,7 @@ public class Splashzone extends AppCompatActivity {
 
         });
 
+        mAuth = FirebaseAuth.getInstance();
 
         Button accessbnn = findViewById(R.id.accessbnn);
         accessbnn.setOnClickListener(v -> {
@@ -50,5 +54,14 @@ public class Splashzone extends AppCompatActivity {
         splashtext.animate().translationY(140).alpha(0).setDuration(2000).setStartDelay(600);
         hometext.startAnimation(frombottom);
         accbtn.startAnimation(frombottom);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user==null){
+            startActivity(new Intent(Splashzone.this,RegisterActivity.class));
+        }
     }
 }

@@ -84,8 +84,10 @@
                     android:textSize="20dp" />
 
                 <EditText
+                    android:id="@+id/getEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType=""
                     android:hint="Provea su correo electrónico" />
 
 
@@ -97,6 +99,7 @@
                     android:textSize="20dp" />
 
                 <EditText
+                    android:id="@+id/getPass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Escriba su contraseña"
@@ -173,6 +176,7 @@
 
 
                 <Button
+                    android:id="@+id/btnregist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/changeag_btn"

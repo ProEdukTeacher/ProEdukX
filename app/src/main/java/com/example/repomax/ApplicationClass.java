@@ -29,10 +29,7 @@ public class ApplicationClass extends Application {
 
         materias = new ArrayList<>();
         materias.add(new Lasmaterias("Español", "Noveno Grado"));
-        materias.add(new Lasmaterias("Español", "Octavo Grado"));
-        materias.add(new Lasmaterias("Español", "Séptimo Grado"));
-        materias.add(new Lasmaterias("Español", "Sexto Grado"));
-        materias.add(new Lasmaterias("Español", "Quinto Grado"));
+
 
 
 

@@ -1,19 +1,29 @@
 package com.example.repomax;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,6 +33,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     AutoCompleteTextView tvDay;
     TextView tvDat, tvgrads, tvclis;
+    EditText etemail, etpass;
+    Button btnreg;
+    FirebaseAuth mAuth;
     ArrayAdapter<String> adapterItems;
     boolean[] selectedClis;
     boolean[] selectedDay;
@@ -44,6 +57,14 @@ public class RegisterActivity extends AppCompatActivity {
         tvgrads = findViewById(R.id.tvgrad);
         tvclis = findViewById(R.id.tvcli);
         tvDat = findViewById(R.id.muestrame);
+        etemail = findViewById(R.id.getEmail);
+        etpass = findViewById(R.id.getPass);
+        btnreg = findViewById(R.id.btnregist);
+        mAuth= FirebaseAuth.getInstance();
+        btnreg.setOnClickListener(view -> {
+            createUser();
+
+        });
 
         //Initialize selected day array
         selectedGrad = new boolean[gradArray.length];
@@ -273,7 +294,33 @@ public class RegisterActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
+private void createUser(){
 
+        String email = etemail.getText().toString();
+        String password = etpass.getText().toString();
+
+        if (TextUtils.isEmpty(email)){
+
+            etemail.setError("Email cannot be empty");
+            etemail.requestFocus();
+        }else if (TextUtils.isEmpty(password)){
+            etpass.setError("Password cannot be empty");
+            etpass.requestFocus();
+        }else{
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
+                    }else{
+                        Toast.makeText(RegisterActivity.this, "Error en registro" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+            });
+    }
+}
 }
 
 
