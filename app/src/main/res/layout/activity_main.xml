@@ -51,6 +51,7 @@
         tools:text="User Name" />
 
     <EditText
+        android:id="@+id/LoginEmails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
@@ -82,6 +83,7 @@
         tools:text="Password" />
 
     <EditText
+        android:id="@+id/LoginPasswords"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
