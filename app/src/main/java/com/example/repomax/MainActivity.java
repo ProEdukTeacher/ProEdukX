@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,7 +16,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import javax.security.auth.login.LoginException;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -35,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button button2 = findViewById(R.id.btn1);
         button2.setOnClickListener(v -> {
+
+            loginUser();
             Intent intent = new Intent(this, getstarted1.class);
             startActivity(intent);
         });
@@ -49,10 +49,8 @@ public class MainActivity extends AppCompatActivity {
         LogPassword.findViewById(R.id.LoginPasswords);
 
         mAuth = FirebaseAuth.getInstance();
-        btn1Log.setOnClickListener(view -> {
 
-            loginUser();
-        });
+
     }
     private void loginUser(){
 

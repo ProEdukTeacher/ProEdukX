@@ -60,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
         etemail = findViewById(R.id.getEmail);
         etpass = findViewById(R.id.getPass);
         btnreg = findViewById(R.id.btnregist);
-        mAuth= FirebaseAuth.getInstance();
+        mAuth= SessionManager.getInstance().getmAuth();
         btnreg.setOnClickListener(view -> {
             createUser();
 

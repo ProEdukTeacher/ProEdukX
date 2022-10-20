@@ -55,7 +55,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Button addClass, cancelClass;
     Planes planes;
     FragmentManager fragmentManager;
-    FirebaseAuth mAuth;
 
 
     @Override
@@ -67,7 +66,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         //Assign variable
 
-        mAuth= FirebaseAuth.getInstance();
         fragmentManager = this.getSupportFragmentManager();
 
         tabLayout = findViewById(R.id.tab_layout);
@@ -86,21 +84,29 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     Log.i("Menu_drawer_tag", "Hote item is clicked");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
+                    break;
                 case R.id.dark_mode:
 
                     Log.i("Dark_mode_tag", "Hote item is clicked");
                     drawerLayout.closeDrawer(GravityCompat.START);
+
+                    break;
 
                 case R.id.comp_trans:
 
                     Log.i("Trans_comp_tag", "Hote item is clicked");
                     drawerLayout.closeDrawer(GravityCompat.START);
 
+                    break;
+
                 case R.id.logout_now:
 
 
                     Log.i("Log_Out_tag","Loging Out");
                     drawerLayout.closeDrawer(GravityCompat.START);
+                    SessionManager.getInstance().logoutFromSession();
+
+                    goBackToSplash();
 
             }
 
@@ -135,13 +141,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    private void goBackToSplash() {
+
+        Intent goBackToSplash = new Intent(this,Splashzone.class);
+        startActivity(goBackToSplash);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
-
-
-
-
 
         return true;
     }
@@ -153,18 +161,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         int id = item.getItemId();
 
 
-
-        if (id == R.id.share) {
-            Toast.makeText(getApplicationContext(), "Presionaste Compartir", Toast.LENGTH_SHORT).show();
-
-        } else if (id == R.id.about) {
-            Toast.makeText(getApplicationContext(), "Presionaste Acerca", Toast.LENGTH_SHORT).show();
-
-
-        } else if (id == R.id.exit) {
-            Toast.makeText(getApplicationContext(), "Presionaste Cerrar", Toast.LENGTH_SHORT).show();
-
-        } else if (id == R.id.search) {
+        if (id == R.id.search) {
 
             Toast.makeText(getApplicationContext(), "Presionaste Buscar", Toast.LENGTH_SHORT).show();
 
@@ -186,6 +183,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
+
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {

@@ -5,10 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawing_layout"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    android:orientation="vertical"
+    tools:context=".HomeActivity"
+    tools:openDrawer="start">
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -31,23 +32,17 @@
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
-
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="@drawable/tab_background"
                     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
                     app:layout_collapseMode="pin"
-
                     app:title="ProEduk Services"
                     app:titleMarginStart="40dp"
                     app:titleTextColor="@color/black"
 
 
                     />
-
-
-
-
 
 
                 <RelativeLayout
@@ -168,18 +163,16 @@
         android:id="@+id/navigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:itemTextColor="@color/black"
-        app:itemIconSize="32dp"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
         android:background="@color/white"
+        android:fitsSystemWindows="true"
         app:headerLayout="@layout/header_menu"
+        app:itemIconSize="32dp"
+        app:itemTextColor="@color/black"
         app:menu="@menu/dra_menu">
 
 
     </com.google.android.material.navigation.NavigationView>
-
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
