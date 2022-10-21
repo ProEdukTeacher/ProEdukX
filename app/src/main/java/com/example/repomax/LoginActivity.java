@@ -14,11 +14,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 
-
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     Button goback, btn1Log;
     EditText LogEmail, LogPassword;
@@ -67,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(MainActivity.this, "Inicio de Sesion", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                    Toast.makeText(LoginActivity.this, "Inicio de Sesion", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
 
                     /** Shoould update a value to database to know if its run or not run
                      as the user wont be bothered to read the get started after each login */
@@ -78,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }else {
 
-                    Toast.makeText(MainActivity.this, "Error en Inicio de Sesion" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Error en Inicio de Sesion" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
                 }
             }

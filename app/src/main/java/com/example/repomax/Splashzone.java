@@ -11,9 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
 public class Splashzone extends AppCompatActivity {
 
     ImageView bgapp, cloverimg;
@@ -38,7 +35,7 @@ public class Splashzone extends AppCompatActivity {
 
         Button abtn = findViewById(R.id.abtn);
         abtn.setOnClickListener(v -> {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
 
         });
