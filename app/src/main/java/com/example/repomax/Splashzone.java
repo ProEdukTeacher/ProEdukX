@@ -18,7 +18,8 @@ public class Splashzone extends AppCompatActivity {
     ImageView bgapp, cloverimg;
     LinearLayout splashtext, hometext, accbtn;
     Animation frombottom;
-    FirebaseAuth mAuth;
+
+
 
 
     @Override
@@ -32,10 +33,8 @@ public class Splashzone extends AppCompatActivity {
 
         });
 
-        mAuth = FirebaseAuth.getInstance();
-
-        Button accessbnn = findViewById(R.id.accessbnn);
-        accessbnn.setOnClickListener(v -> {
+        Button abtn = findViewById(R.id.abtn);
+        abtn.setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
 

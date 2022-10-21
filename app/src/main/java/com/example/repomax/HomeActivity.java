@@ -98,10 +98,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
                 case R.id.logout_now:
 
+
                     Log.i("Log_Out_tag","Loging Out");
                     drawerLayout.closeDrawer(GravityCompat.START);
-                    mAuth.signOut();
-                    startActivity(new Intent(HomeActivity.this, MainActivity.class));
+
             }
 
 
@@ -138,12 +138,21 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+
+
+
+
+
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
+
+
 
         if (id == R.id.share) {
             Toast.makeText(getApplicationContext(), "Presionaste Compartir", Toast.LENGTH_SHORT).show();
