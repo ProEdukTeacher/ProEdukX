@@ -1,8 +1,5 @@
 package com.example.repomax;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,19 +7,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    Button goback, btn1Log;
-    EditText LogEmail, LogPassword;
+
     FirebaseAuth mAuth;
+    EditText loge, logp;
 
 
 
@@ -30,12 +27,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAuth = FirebaseAuth.getInstance();
 
         Button button2 = findViewById(R.id.btn1);
-        button2.setOnClickListener(v -> {
-
-       loginUser();
-        });
+        button2.setOnClickListener(view -> loginUser());
 
         Button goback = findViewById(R.id.gobacktoit);
         goback.setOnClickListener(v -> {
@@ -43,44 +38,33 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        LogEmail = findViewById(R.id.LoginEmails);
-        LogPassword = findViewById(R.id.LoginPasswords);
+        EditText loge = findViewById(R.id.LoginEmails);
+        EditText logp= findViewById(R.id.LoginPasswords);
 
-        mAuth = SessionManager.getInstance().getmAuth();
 
 
     }
     private void loginUser(){
 
-        String email = LogEmail.getText().toString();
-        String password = LogPassword.getText().toString();
+        String email = loge.getText().toString();
+        String password = logp.getText().toString();
 
         if (TextUtils.isEmpty(email)){
 
-            LogEmail.setError("Email cannot be empty");
-            LogEmail.requestFocus();
+            loge.setError("Email cannot be empty");
+            loge.requestFocus();
         }else if (TextUtils.isEmpty(password)){
-            LogPassword.setError("Password cannot be empty");
-            LogPassword.requestFocus();
+            logp.setError("Password cannot be empty");
+            logp.requestFocus();
     }else{
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    Toast.makeText(MainActivity.this, "Inicio de Sesion", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+            if (task.isSuccessful()){
+                Toast.makeText(MainActivity.this, "Inicio de Sesion", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+            }else {
 
-                    /** Shoould update a value to database to know if its run or not run
-                     as the user wont be bothered to read the get started after each login */
-//                    Intent intent = new Intent(this, getstarted1.class);
-//                    startActivity(intent);
+                Toast.makeText(MainActivity.this, "Error en Inicio de Sesion" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
 
-
-                }else {
-
-                    Toast.makeText(MainActivity.this, "Error en Inicio de Sesion" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
-                }
             }
         });
 
@@ -89,4 +73,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user==null){
+            startActivity(new Intent(MainActivity.this,HomeActivity.class));
+        }
+    }
 }

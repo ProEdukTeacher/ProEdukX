@@ -27,6 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -312,9 +313,9 @@ private void createUser(){
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
+                        startActivity(new Intent(RegisterActivity.this, getstarted1.class));
                     }else{
-                        Toast.makeText(RegisterActivity.this, "Error en registro" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Error en registro" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
                 }

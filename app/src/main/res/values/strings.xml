@@ -10,7 +10,7 @@
     <string name="password">Password</string>
     <string name="login">LOGIN NOW</string>
     <string name="create_an_account">Create An Account</string>
-    <string name="enter_user_name">Enter User Name</string>
+    <string name="enter_user_name">Enter Email</string>
     <string name="enter_password">Enter password</string>
     <string name="reg_strate">Regístrate</string>
     <string name="nombre">Nombre</string>
