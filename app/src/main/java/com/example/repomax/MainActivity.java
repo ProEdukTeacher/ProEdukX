@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Inicio de Sesion", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, HomeActivity.class));
 
-                    /** Shoould update a value to database to know if its run or not run
+                    /** Should update a value to database to know if its run or not run
                      as the user wont be bothered to read the get started after each login */
 //                    Intent intent = new Intent(this, getstarted1.class);
 //                    startActivity(intent);
