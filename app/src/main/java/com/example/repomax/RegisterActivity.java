@@ -61,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
         etpass = findViewById(R.id.getPass);
         etpassc = findViewById(R.id.getPassc);
         btnreg = findViewById(R.id.btnregist);
-        mAuth= SessionManager.getInstance().getmAuth();
+        mAuth = SessionManager.getInstance().getmAuth();
         btnreg.setOnClickListener(view -> {
             createUser();
 
@@ -82,21 +82,16 @@ public class RegisterActivity extends AppCompatActivity {
                 //Set dialog non cancellable
                 builder.setCancelable(false);
 
-                builder.setMultiChoiceItems(dayArray, selectedDay, new DialogInterface.OnMultiChoiceClickListener() {
+                builder.setSingleChoiceItems(dayArray, -1, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int i, boolean b) {
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                        //check conditions
-
-                        if (b) {
-
+                        if (!dayList.isEmpty()) {
+                            dayList.clear();
+                        }else {
                             dayList.add(i);
-
-                            Collections.sort(dayList);
-                        } else {
-
-                            dayList.remove(0);
                         }
+
                     }
                 });
 
@@ -127,20 +122,6 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 });
 
-                builder.setNeutralButton("Clear All", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        for (int j = 0; j < selectedDay.length; j++) {
-
-                            selectedDay[j] = false;
-                            dayList.clear();
-                            tvDat.setText("");
-
-                        }
-
-                    }
-                });
 
                 builder.show();
             }
@@ -150,43 +131,43 @@ public class RegisterActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
-private void createUser(){
+    private void createUser() {
 
         String email = etemail.getText().toString();
         String password = etpass.getText().toString();
         String passwordc = etpassc.getText().toString();
 
-        if (TextUtils.isEmpty(email)){
+        if (TextUtils.isEmpty(email)) {
 
             etemail.setError("Email cannot be empty");
             etemail.requestFocus();
-        }else if (TextUtils.isEmpty(password)) {
+        } else if (TextUtils.isEmpty(password)) {
             etpass.setError("Password cannot be empty");
             etpass.requestFocus();
 
-        }else if (TextUtils.isEmpty(passwordc)) {
+        } else if (TextUtils.isEmpty(passwordc)) {
             etpassc.setError("Confirm your password");
             etpassc.requestFocus();
-        } else if (!password.equals(passwordc)){
+        } else if (!password.equals(passwordc)) {
 
             etpassc.setError("Passwords do not match");
             etpassc.requestFocus();
 
-        }else{
+        } else {
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RegisterActivity.this, getstarted1.class));
-                    }else{
+                    } else {
                         Toast.makeText(RegisterActivity.this, "Error en registro" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
                 }
             });
+        }
     }
-}
 }
 
 
