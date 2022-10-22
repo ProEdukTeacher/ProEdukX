@@ -34,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     AutoCompleteTextView tvDay;
     TextView tvDat, tvgrads, tvclis;
-    EditText etemail, etpass;
+    EditText etemail, etpass, etpassc;
     Button btnreg;
     FirebaseAuth mAuth;
     ArrayAdapter<String> adapterItems;
@@ -60,6 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
         tvDat = findViewById(R.id.muestrame);
         etemail = findViewById(R.id.getEmail);
         etpass = findViewById(R.id.getPass);
+        etpassc = findViewById(R.id.getPassc);
         btnreg = findViewById(R.id.btnregist);
         mAuth= SessionManager.getInstance().getmAuth();
         btnreg.setOnClickListener(view -> {
@@ -299,14 +300,24 @@ private void createUser(){
 
         String email = etemail.getText().toString();
         String password = etpass.getText().toString();
+        String passwordc = etpassc.getText().toString();
 
         if (TextUtils.isEmpty(email)){
 
             etemail.setError("Email cannot be empty");
             etemail.requestFocus();
-        }else if (TextUtils.isEmpty(password)){
+        }else if (TextUtils.isEmpty(password)) {
             etpass.setError("Password cannot be empty");
             etpass.requestFocus();
+
+        }else if (TextUtils.isEmpty(passwordc)) {
+            etpassc.setError("Confirm your password");
+            etpassc.requestFocus();
+        } else if (!password.equals(passwordc)){
+
+            etpassc.setError("Passwords do not match");
+            etpassc.requestFocus();
+
         }else{
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
