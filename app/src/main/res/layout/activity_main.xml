@@ -92,6 +92,7 @@
         android:drawableStart="@drawable/custom_lock_icon"
         android:drawableLeft="@drawable/custom_lock_icon"
         android:drawablePadding="12dp"
+        android:autofillHints="password"
         android:hint="@string/enter_password"
         android:inputType="textPassword"
         android:paddingVertical="15dp"

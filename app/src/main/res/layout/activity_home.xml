@@ -37,12 +37,7 @@
                     android:background="@drawable/tab_background"
                     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
                     app:layout_collapseMode="pin"
-                    app:title="ProEduk Services"
-                    app:titleMarginStart="40dp"
-                    app:titleTextColor="@color/black"
-
-
-                    />
+                    app:titleTextColor="@color/black" />
 
 
                 <RelativeLayout
