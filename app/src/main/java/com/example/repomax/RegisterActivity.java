@@ -55,8 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        tvgrads = findViewById(R.id.tvgrad);
-        tvclis = findViewById(R.id.tvcli);
+
         tvDat = findViewById(R.id.muestrame);
         etemail = findViewById(R.id.getEmail);
         etpass = findViewById(R.id.getPass);
@@ -68,10 +67,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         });
 
-        //Initialize selected day array
-        selectedGrad = new boolean[gradArray.length];
-        selectedClis = new boolean[clisArray.length];
-        selectedDay = new boolean[dayArray.length];
         tvDat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,148 +142,6 @@ public class RegisterActivity extends AppCompatActivity {
                 });
 
                 builder.show();
-            }
-        });
-
-        tvgrads.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(
-
-
-                        RegisterActivity.this
-                );
-
-                builder.setTitle("Registrar Grados");
-                builder.setCancelable(false);
-                builder.setMultiChoiceItems(gradArray, selectedGrad, new DialogInterface.OnMultiChoiceClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-
-                        //check conditions
-
-                        if (isChecked) {
-
-                            gradList.add(which);
-
-                            Collections.sort(gradList);
-                        } else {
-
-                            gradList.remove(0);
-                        }
-
-                    }
-                });
-                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        StringBuilder stringBuilder = new StringBuilder();
-                        for (int g = 0; g < gradList.size(); g++) {
-                            stringBuilder.append((gradArray[gradList.get(g)]));
-                            if (g != gradList.size() - 1) {
-                                stringBuilder.append(", ");
-                            }
-                        }
-                        tvgrads.setText(stringBuilder.toString());
-
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        dialogInterface.dismiss();
-
-                    }
-                });
-                builder.setNeutralButton("Clear All", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        for (int g = 0; g < selectedGrad.length; g++) {
-
-                            selectedGrad[g] = false;
-                            gradList.clear();
-                            tvgrads.setText("");
-                        }
-
-                    }
-                });
-
-                builder.show();
-
-            }
-        });
-
-        tvclis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(
-
-
-                        RegisterActivity.this
-                );
-
-                builder.setTitle("Registrar Clases");
-                builder.setCancelable(false);
-                builder.setMultiChoiceItems(clisArray, selectedClis, new DialogInterface.OnMultiChoiceClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-
-                        //check conditions
-
-                        if (isChecked) {
-
-                            clisList.add(which);
-
-                            Collections.sort(clisList);
-                        } else {
-
-                            clisList.remove(0);
-                        }
-
-                    }
-                });
-                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        StringBuilder stringBuilder = new StringBuilder();
-                        for (int c = 0; c < clisList.size(); c++) {
-                            stringBuilder.append((clisArray[clisList.get(c)]));
-                            if (c != clisList.size() - 1) {
-                                stringBuilder.append(", ");
-                            }
-                        }
-                        tvclis.setText(stringBuilder.toString());
-
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        dialogInterface.dismiss();
-
-                    }
-                });
-                builder.setNeutralButton("Clear All", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        for (int c = 0; c < selectedClis.length; c++) {
-
-                            selectedClis[c] = false;
-                            clisList.clear();
-                            tvclis.setText("");
-                        }
-
-                    }
-                });
-
-                builder.show();
-
             }
         });
 

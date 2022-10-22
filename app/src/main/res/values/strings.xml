@@ -57,5 +57,6 @@
     <string name="desc_two">¿Prefieres utilizar los servicios de ProEduk en computadora? Utiliza los servicios integrados en diferentes dispositivos. </string>
     <string name="desc_three">Busca el plan o recurso que necesites utilizando una biblioteca amplia; integra fotos, documentos, quiz y exámenes.</string>
     <string name="desc_fourth">¡Ejerce control de tu tiempo! ProEduk Teaching Services provee la capacidad para reducir el tiempo que toma planificar hasta un 75%</string>
+    <string name="title_activity_reg_gmail">Reg_Gmail</string>
 
 </resources>
