@@ -139,26 +139,12 @@
         android:layout_gravity="center_horizontal"/>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/SIBTN"
+        android:layout_width="310dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="12dp"
-        android:text="Login using Facebook"
-        android:layout_marginHorizontal="30dp"
-        android:background="@drawable/customface"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Login using Twitter"
-        android:layout_marginHorizontal="30dp"
-        android:background="@drawable/customtwit"/>
-
-
-
-
-
-
-
-
+        android:background="@drawable/gsu" />
 
 </LinearLayout>

@@ -11,10 +11,13 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.TextureView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,6 +34,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -55,6 +63,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Button addClass, cancelClass;
     Planes planes;
     FragmentManager fragmentManager;
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
+    TextView namer, emailer;
+    ShapeableImageView profp;
 
 
     @Override
@@ -65,6 +77,20 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //Assign variable
+
+        profp = findViewById(R.id.profpic);
+        namer= findViewById(R.id.name);
+        emailer = findViewById(R.id.theemail);
+        gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        gsc = GoogleSignIn.getClient(this, gso);
+
+        GoogleSignInAccount acc = GoogleSignIn.getLastSignedInAccount(this);
+        if (acc!=null){
+
+            String personName = acc.getDisplayName();
+            String personEmail = acc.getEmail();
+            String profilepic = String.valueOf(acc.getPhotoUrl());
+        }
 
         fragmentManager = this.getSupportFragmentManager();
 
