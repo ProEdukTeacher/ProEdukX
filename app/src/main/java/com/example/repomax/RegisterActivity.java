@@ -32,110 +32,64 @@ import java.util.Objects;
 public class RegisterActivity extends AppCompatActivity {
 
 
-    AutoCompleteTextView tvDay;
-    TextView tvDat, tvgrads, tvclis;
+    TextView tvDat;
     EditText etemail, etpass, etpassc, uname, ulastname;
     Button btnreg;
     FirebaseAuth mAuth;
-    ArrayAdapter<String> adapterItems;
-    boolean[] selectedClis;
-    boolean[] selectedDay;
-    boolean[] selectedGrad;
-    ArrayList<Integer> clisList = new ArrayList<>();
-    ArrayList<Integer> gradList = new ArrayList<>();
     ArrayList<Integer> dayList = new ArrayList<>();
-    String[] clisArray = {"Español", "Inglés", "Matemáticas", "Ciencias", "Estudios Sociales"};
+    DAOTeacher daoTeacher;
+
     String[] dayArray = {"Escuela Elemental", "Escuela Intermedia", "Escuela Superior"};
-    String[] gradArray = {"Kindergarten", "(1)Primer Grado", "(2)Segundo Grado", "(3)Tercer Grado", "(4)Cuarto Grado",
-            "(5)Quinto Grado", "(6)Sexto Grado"};
-    RecyclerView recyclerView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        final EditText uname= findViewById(R.id.username);
-        final EditText ulastname=findViewById(R.id.lastnames);
-        final TextView tvDat = findViewById(R.id.muestrame);
-        final EditText etemail = findViewById(R.id.getEmail);
+        uname = findViewById(R.id.username);
+        ulastname = findViewById(R.id.lastnames);
+        tvDat = findViewById(R.id.muestrame);
+        etemail = findViewById(R.id.getEmail);
         etpass = findViewById(R.id.getPass);
         etpassc = findViewById(R.id.getPassc);
         btnreg = findViewById(R.id.btnregist);
         mAuth = SessionManager.getInstance().getmAuth();
-        DAOTeacher daoTeacher = new DAOTeacher();
+        daoTeacher = new DAOTeacher();
         btnreg.setOnClickListener(view -> {
             createUser();
-            TeacherUser tea = new TeacherUser(uname.getText().toString(),
-                    ulastname.getText().toString(), etemail.getText().toString(), tvDat.getText().toString());
-                    daoTeacher.add(tea).addOnSuccessListener(suc ->{
-
-
-                        Toast.makeText(this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
-
-
-
-                    });
         });
 
-        tvDat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Initialize alert dialog
+        tvDat.setOnClickListener(v -> {
+            //Initialize alert dialog
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(
+            AlertDialog.Builder builder = new AlertDialog.Builder(
 
-                        RegisterActivity.this
+                    RegisterActivity.this
 
-                );
-                //Set title
-                builder.setTitle("Seleccione Nivel");
-                //Set dialog non cancellable
-                builder.setCancelable(false);
+            );
+            //Set title
+            builder.setTitle("Seleccione Nivel");
+            //Set dialog non cancellable
+            builder.setCancelable(false);
 
-                builder.setSingleChoiceItems(dayArray, -1, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+            builder.setSingleChoiceItems(dayArray, -1, (dialogInterface, i) -> {
 
-                        if (!dayList.isEmpty()) {
-                            dayList.clear();
-                        }else {
-                            dayList.add(i);
-                        }
+                if (!dayList.isEmpty()) {
+                    dayList.clear();
+                } else {
+                    dayList.add(i);
+                }
 
-                    }
-                });
+            });
 
-                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        StringBuilder stringBuilder = new StringBuilder();
+            builder.setPositiveButton("Ok", (dialog, which) -> {
 
-                        for (int j = 0; j < dayList.size(); j++) {
-
-                            stringBuilder.append(dayArray[dayList.get(j)]);
-
-                            if (j != dayList.size() - 1) {
-
-                                stringBuilder.append(", ");
-                            }
-                        }
-
-                        tvDat.setText(stringBuilder.toString());
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        dialogInterface.dismiss();
-
-                    }
-                });
+                tvDat.setText(dayArray[dayList.get(0)]);
+            });
+            builder.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());
 
 
-                builder.show();
-            }
+            builder.show();
         });
 
 
@@ -147,8 +101,18 @@ public class RegisterActivity extends AppCompatActivity {
         String email = etemail.getText().toString();
         String password = etpass.getText().toString();
         String passwordc = etpassc.getText().toString();
+        String firstName = uname.getText().toString();
+        String lastName = ulastname.getText().toString();
 
-        if (TextUtils.isEmpty(email)) {
+        if (TextUtils.isEmpty(firstName)) {
+
+            uname.setError("Name cannot be empty");
+            uname.requestFocus();
+        }else  if (TextUtils.isEmpty(lastName)) {
+
+            ulastname.setError("Lname cannot be empty");
+            ulastname.requestFocus();
+        }else if (TextUtils.isEmpty(email)) {
 
             etemail.setError("Email cannot be empty");
             etemail.requestFocus();
@@ -169,6 +133,9 @@ public class RegisterActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
+                        TeacherUser tea = new TeacherUser(firstName,
+                                lastName, email, tvDat.getText().toString());
+                        daoTeacher.add(tea);
                         Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RegisterActivity.this, getstarted1.class));
                     } else {
