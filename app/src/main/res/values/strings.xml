@@ -24,8 +24,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="notas">Notas</string>
-    <string name="nombre_de_la_clase">Nombre de la clase</string>
-    <string name="introduzca_el_grupo">Introduzca el grupo</string>
+    <string name="nombre_de_la_clase">Seleccionar Materia</string>
+    <string name="introduzca_el_grupo">Seleccionar Grado</string>
     <string name="a_ade_una_clase">Añade una clase.</string>
     <string name="add_class">Add Class</string>
     <string name="add_a_class">Add A Class</string>

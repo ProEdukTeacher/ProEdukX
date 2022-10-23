@@ -147,6 +147,9 @@ public class Binary extends AppCompatDialogFragment {
 
                         requireActivity()
                 );
+                //Set Custom View for the Dialog
+
+
 
                 //Set title
                 builder.setTitle("Seleccione grupo");

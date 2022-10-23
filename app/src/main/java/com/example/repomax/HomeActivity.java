@@ -177,6 +177,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
 
+
+
         return true;
     }
 

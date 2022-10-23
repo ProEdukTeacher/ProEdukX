@@ -30,12 +30,14 @@
         android:layout_marginBottom="12dp"
         android:background="@drawable/rounded_campos"
         android:hint="@string/nombre_de_la_clase"
+        android:drawableRight="@drawable/down_arrow"
         android:paddingStart="15dp"
         android:paddingLeft="15dp"
         android:paddingTop="5dp"
         android:textColor="@color/black"
         android:textColorHint="#727372"
-        android:textSize="24sp" />
+        android:textSize="21sp"
+        />
 
     <TextView
 
@@ -49,13 +51,14 @@
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="12dp"
         android:background="@drawable/rounded_campos"
+        android:drawableRight="@drawable/down_arrow"
         android:hint="@string/introduzca_el_grupo"
         android:paddingStart="15dp"
         android:paddingLeft="15dp"
         android:paddingTop="5dp"
         android:textColor="@color/black"
         android:textColorHint="#727372"
-        android:textSize="24sp" />
+        android:textSize="21sp" />
 
 
     <Button
