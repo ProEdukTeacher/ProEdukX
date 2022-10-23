@@ -1,32 +1,24 @@
 package com.example.repomax;
 
-import android.content.DialogInterface;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
+
 import android.view.WindowManager;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
-import java.util.Collections;
+
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -55,9 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnreg = findViewById(R.id.btnregist);
         mAuth = SessionManager.getInstance().getmAuth();
         daoTeacher = new DAOTeacher();
-        btnreg.setOnClickListener(view -> {
-            createUser();
-        });
+        btnreg.setOnClickListener(view -> createUser());
 
         tvDat.setOnClickListener(v -> {
             //Initialize alert dialog
@@ -82,10 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             });
 
-            builder.setPositiveButton("Ok", (dialog, which) -> {
-
-                tvDat.setText(dayArray[dayList.get(0)]);
-            });
+            builder.setPositiveButton("Ok", (dialog, which) -> tvDat.setText(dayArray[dayList.get(0)]));
             builder.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());
 
 
@@ -108,11 +95,11 @@ public class RegisterActivity extends AppCompatActivity {
 
             uname.setError("Name cannot be empty");
             uname.requestFocus();
-        }else  if (TextUtils.isEmpty(lastName)) {
+        } else if (TextUtils.isEmpty(lastName)) {
 
             ulastname.setError("Lname cannot be empty");
             ulastname.requestFocus();
-        }else if (TextUtils.isEmpty(email)) {
+        } else if (TextUtils.isEmpty(email)) {
 
             etemail.setError("Email cannot be empty");
             etemail.requestFocus();
@@ -129,19 +116,16 @@ public class RegisterActivity extends AppCompatActivity {
             etpassc.requestFocus();
 
         } else {
-            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        TeacherUser tea = new TeacherUser(firstName,
-                                lastName, email, tvDat.getText().toString());
-                        daoTeacher.add(tea);
-                        Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RegisterActivity.this, getstarted1.class));
-                    } else {
-                        Toast.makeText(RegisterActivity.this, "Error en registro" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    TeacherUser tea = new TeacherUser(firstName,
+                            lastName, email, tvDat.getText().toString());
+                    daoTeacher.add(tea);
+                    Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegisterActivity.this, getstarted1.class));
+                } else {
+                    Toast.makeText(RegisterActivity.this, "Error en registro" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
 
-                    }
                 }
             });
         }
