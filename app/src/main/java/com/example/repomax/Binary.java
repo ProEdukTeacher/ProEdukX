@@ -1,6 +1,5 @@
 package com.example.repomax;
 
-import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -128,48 +128,106 @@ public class Binary extends AppCompatDialogFragment {
         ArrayList<Integer> clisList = new ArrayList<>();
         ArrayList<Integer> gradList = new ArrayList<>();
         ArrayList<Integer> dayList = new ArrayList<>();
-        String[] clisArray = {"EspaÃ±ol", "InglÃ©s", "MatemÃ¡ticas", "Ciencias", "Estudios Sociales"};
+        String[] clisArray = {"Español", "Inglés", "Matemáticas", "Ciencias", "Estudios Sociales", "Salud"};
         String[] dayArray = {"Escuela Elemental", "Escuela Intermedia", "Escuela Superior"};
         String[] gradArray = {"Kindergarten", "(1)Primer Grado", "(2)Segundo Grado", "(3)Tercer Grado", "(4)Cuarto Grado",
-                "(5)Quinto Grado", "(6)Sexto Grado"};
+                "(5)Quinto Grado", "(6)Sexto Grado", "Séptimo Grado", "Noveno Grado", "Décimo Grado", "Undécimo Grado", "Duodécimo Grado"};
 
 
         selectedGrad = new boolean[gradArray.length];
         selectedClis = new boolean[clisArray.length];
         selectedDay = new boolean[dayArray.length];
 
+        Sectiones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Initialize alert dialog
+
+                androidx.appcompat.app.AlertDialog.Builder builder = new AlertDialog.Builder(
+
+                        requireActivity()
+                );
+
+                //Set title
+                builder.setTitle("Seleccione grupo");
+                //Set dialog non cancellable
+                builder.setCancelable(false);
+
+                builder.setSingleChoiceItems(gradArray, -1, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        if (!gradList.isEmpty()) {
+                            gradList.clear();
+                        }else {
+                            gradList.add(i);
+                        }
+
+
+                    }
+                });
+                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        StringBuilder stringBuilder = new StringBuilder();
+
+                        for (int j = 0; j < gradList.size(); j++) {
+
+                            stringBuilder.append(gradArray[gradList.get(j)]);
+
+                            if (j != gradList.size() - 1) {
+
+                                stringBuilder.append(", ");
+                            }
+                        }
+
+                        Sectiones.setText(stringBuilder.toString());
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        dialogInterface.dismiss();
+
+                    }
+                });
+
+
+
+                builder.show();
+            }
+        });
+
+
+
         classtup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Initialize alert dialog
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(
+                androidx.appcompat.app.AlertDialog.Builder builder = new AlertDialog.Builder(
 
                         requireActivity()
-                 );
+
+                );
                 //Set title
-                builder.setTitle("Seleccione Nivel");
+                builder.setTitle("Seleccione Clase");
                 //Set dialog non cancellable
                 builder.setCancelable(false);
 
-                builder.setMultiChoiceItems(clisArray, selectedClis, new DialogInterface.OnMultiChoiceClickListener() {
+                builder.setSingleChoiceItems(clisArray, -1, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int i, boolean b) {
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                        //check conditions
-
-                        if (b) {
-
+                        if (!clisList.isEmpty()) {
+                            clisList.clear();
+                        }else {
                             clisList.add(i);
-
-                            Collections.sort(clisList);
-                        } else {
-
-                            clisList.remove(0);
                         }
+
                     }
                 });
-
                 builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -188,6 +246,7 @@ public class Binary extends AppCompatDialogFragment {
                         classtup.setText(stringBuilder.toString());
                     }
                 });
+
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -197,25 +256,14 @@ public class Binary extends AppCompatDialogFragment {
                     }
                 });
 
-                builder.setNeutralButton("Clear All", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        for (int j = 0; j < selectedClis.length; j++) {
-
-                            selectedClis[j] = false;
-                            clisList.clear();
-                            classtup.setText("");
-                        }
-
-                    }
-                });
-
-                builder.show();
-            }
-        });
 
 
+            builder.show();
+        }
+
+
+
+    });
 
 
                 return view;
