@@ -17,14 +17,17 @@
         android:src="@drawable/circlebook" />
 
 
-    <EditText
+    <TextView
 
         android:id="@+id/classtup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/circlekeeper"
         android:layout_centerHorizontal="true"
-        android:layout_margin="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/rounded_campos"
         android:hint="@string/nombre_de_la_clase"
         android:paddingStart="15dp"
@@ -34,14 +37,17 @@
         android:textColorHint="#727372"
         android:textSize="24sp" />
 
-    <EditText
+    <TextView
 
         android:id="@+id/Sectiones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/classtup"
         android:layout_centerHorizontal="true"
-        android:layout_margin="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/rounded_campos"
         android:hint="@string/introduzca_el_grupo"
         android:paddingStart="15dp"

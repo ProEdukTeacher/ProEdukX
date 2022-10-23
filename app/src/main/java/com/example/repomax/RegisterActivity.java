@@ -136,6 +136,7 @@ public class RegisterActivity extends AppCompatActivity {
                             selectedDay[j] = false;
                             dayList.clear();
                             tvDat.setText("");
+
                         }
 
                     }
