@@ -6,12 +6,13 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class DAOTeacher {
 
+    private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     public DAOTeacher(){
 
 
-        FirebaseDatabase db= FirebaseDatabase.getInstance();
-        databaseReference = db.getReference(TeacherUser.class.getSimpleName());
+        firebaseDatabase = SessionManager.getInstance().getFirebaseDatabase();
+        databaseReference = firebaseDatabase.getReference(TeacherUser.class.getSimpleName());
     }
 
     public Task<Void> add (TeacherUser tea){
