@@ -73,6 +73,7 @@
 
 
                 <EditText
+                    android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Provea su nombre" />
@@ -83,6 +84,7 @@
                     android:textColor="#00a5ff"
                     android:textSize="20dp" />
                 <EditText
+                    android:id="@+id/lastnames"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Provea sus apellidos" />
@@ -98,7 +100,7 @@
                     android:id="@+id/getEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType=""
+                    android:inputType="textEmailAddress"
                     android:hint="Provea su correo electrónico" />
 
 
@@ -106,6 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Contraseña"
+                    android:inputType="textPassword"
                     android:textColor="#00a5ff"
                     android:textSize="20dp" />
 
@@ -121,7 +124,8 @@
                     android:layout_height="wrap_content"
                     android:text="Confirme Contraseña"
                     android:textColor="#00a5ff"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    />
 
                 <EditText
                     android:id="@+id/getPassc"
@@ -150,29 +154,6 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Registrar Clases"
-                    android:textColor="#00a5ff"
-                    android:textSize="20dp"
-
-                    />
-                <Button
-                    android:id="@+id/fab"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="-5dp"
-                    android:layout_marginRight="-5dp"
-                    android:background="@drawable/selectedgreen"
-                    android:text="Añadir Nueva Clase"
-                    android:textColor="#ffffff"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginTop="12dp"
-                    />
-
 
 
                 <Button

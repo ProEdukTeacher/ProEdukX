@@ -34,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     AutoCompleteTextView tvDay;
     TextView tvDat, tvgrads, tvclis;
-    EditText etemail, etpass, etpassc;
+    EditText etemail, etpass, etpassc, uname, ulastname;
     Button btnreg;
     FirebaseAuth mAuth;
     ArrayAdapter<String> adapterItems;
@@ -55,16 +55,27 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        tvDat = findViewById(R.id.muestrame);
-        etemail = findViewById(R.id.getEmail);
+        final EditText uname= findViewById(R.id.username);
+        final EditText ulastname=findViewById(R.id.lastnames);
+        final TextView tvDat = findViewById(R.id.muestrame);
+        final EditText etemail = findViewById(R.id.getEmail);
         etpass = findViewById(R.id.getPass);
         etpassc = findViewById(R.id.getPassc);
         btnreg = findViewById(R.id.btnregist);
         mAuth = SessionManager.getInstance().getmAuth();
+        DAOTeacher daoTeacher = new DAOTeacher();
         btnreg.setOnClickListener(view -> {
             createUser();
+            TeacherUser tea = new TeacherUser(uname.getText().toString(),
+                    ulastname.getText().toString(), etemail.getText().toString(), tvDat.getText().toString());
+                    daoTeacher.add(tea).addOnSuccessListener(suc ->{
 
+
+                        Toast.makeText(this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
+
+
+
+                    });
         });
 
         tvDat.setOnClickListener(new View.OnClickListener() {
