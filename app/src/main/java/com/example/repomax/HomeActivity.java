@@ -65,8 +65,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     FragmentManager fragmentManager;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
+    View headerView;
     TextView namer, emailer;
     ShapeableImageView profp;
+    ImageView profileImage;
 
 
     @Override
@@ -79,13 +81,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         //Assign variable
 
         profp = findViewById(R.id.profpic);
-        namer= findViewById(R.id.name);
+        namer = findViewById(R.id.name);
         emailer = findViewById(R.id.theemail);
-        gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gsc = GoogleSignIn.getClient(this, gso);
 
+
         GoogleSignInAccount acc = GoogleSignIn.getLastSignedInAccount(this);
-        if (acc!=null){
+        if (acc != null) {
 
             String personName = acc.getDisplayName();
             String personEmail = acc.getEmail();
@@ -100,15 +103,20 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_open, R.string.menu_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+        headerView = navigationView.getHeaderView(0);
+        profileImage = headerView.findViewById(R.id.profileImage);
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               gotoProfile();
+            }
+        });
+
         navigationView.setNavigationItemSelectedListener(item -> {
 
 
             switch (item.getItemId()) {
 
-                case R.id.profile_go:
-                    Log.i("Profile_tag","Hote item is clicked");
-                    drawerLayout.closeDrawer(GravityCompat.START);
-                    gotoProfile();
 
                 case R.id.nav_home:
 
@@ -133,7 +141,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 case R.id.logout_now:
 
 
-                    Log.i("Log_Out_tag","Loging Out");
+                    Log.i("Log_Out_tag", "Loging Out");
                     drawerLayout.closeDrawer(GravityCompat.START);
                     SessionManager.getInstance().logoutFromSession();
 
@@ -171,15 +179,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
+
     private void gotoProfile() {
 
-        Intent gotoProfile = new Intent(this,UserProfile.class);
+        Intent gotoProfile = new Intent(this, UserProfile.class);
         startActivity(gotoProfile);
     }
 
     private void goBackToSplash() {
 
-        Intent goBackToSplash = new Intent(this,Splashzone.class);
+        Intent goBackToSplash = new Intent(this, Splashzone.class);
         startActivity(goBackToSplash);
     }
 
@@ -188,10 +197,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         getMenuInflater().inflate(R.menu.menu, menu);
 
 
-
         return true;
     }
-
 
 
     @Override
