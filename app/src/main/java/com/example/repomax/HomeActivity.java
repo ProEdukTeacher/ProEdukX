@@ -105,6 +105,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             switch (item.getItemId()) {
 
+                case R.id.profile_go:
+                    Log.i("Profile_tag","Hote item is clicked");
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    gotoProfile();
+
                 case R.id.nav_home:
 
                     Log.i("Menu_drawer_tag", "Hote item is clicked");
@@ -165,6 +170,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         tabLayout.setupWithViewPager(viewPager);
 
 
+    }
+    private void gotoProfile() {
+
+        Intent gotoProfile = new Intent(this,UserProfile.class);
+        startActivity(gotoProfile);
     }
 
     private void goBackToSplash() {

@@ -22,6 +22,11 @@
             android:id="@+id/comp_trans"
             android:icon="@drawable/computer_icon"
             android:title="Transfer to Computer" />
+
+        <item
+            android:id="@+id/profile_go"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="Profile"/>
     </group>
 
 
