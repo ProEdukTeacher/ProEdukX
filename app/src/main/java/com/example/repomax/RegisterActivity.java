@@ -75,6 +75,10 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
+                    }).addOnFailureListener(er -> {
+
+                        Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
+
                     });
         });
 
