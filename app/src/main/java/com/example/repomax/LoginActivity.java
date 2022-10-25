@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
+    TextView resetLink;
 
 
 
@@ -46,6 +48,9 @@ public class LoginActivity extends AppCompatActivity {
         gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gsc = GoogleSignIn.getClient(this, gso);
         sin = findViewById(R.id.SIBTN);
+        resetLink = findViewById(R.id.resetLink);
+
+//        resetPassword();
         sin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +77,18 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
+//    private void resetPassword() {
+//        String email="user@example.com";
+//        resetLink.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mAuth.sendPasswordResetEmail(email)
+//
+//            }
+//        });
+//    }
+
     private void loginUser(){
 
         String email = LogEmail.getText().toString();

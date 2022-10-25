@@ -101,12 +101,16 @@
         android:textColor="@color/black"
         android:textColorHint="#A9A9A9" />
     <TextView
+        android:id="@+id/resetLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textStyle="bold"
         android:text="@string/olvido"
+        android:inputType="textUri"
         android:textColor="#ffffff"
+        android:clickable="true"
+        android:autoLink="web"
         android:layout_marginStart="30dp"
         android:layout_marginTop="-20dp"
         android:layout_marginBottom="25dp"
