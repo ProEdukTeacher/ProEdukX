@@ -17,6 +17,7 @@ public class ApplicationClass extends Application {
     public SessionManager mySession;
 
     public static ArrayList<Lasmaterias> materias;
+    public static ArrayList<Lasmateriasatt> materiasatt;
 
 
 
@@ -31,6 +32,8 @@ public class ApplicationClass extends Application {
 
         materias = new ArrayList<>();
         materias.add(new Lasmaterias("Español", "Noveno Grado"));
+        materiasatt = new ArrayList<>();
+        materiasatt.add(new Lasmateriasatt("",""));
 
 
 

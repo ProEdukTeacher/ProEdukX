@@ -62,14 +62,9 @@ public class Planes extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-
-
-
-
         materias = new ArrayList<>();
         recyclerView = view.findViewById(R.id.list);
         recyclerView.setHasFixedSize(true);
-
         layoutManager = new LinearLayoutManager(this.getActivity());
         recyclerView.setLayoutManager(layoutManager);
 

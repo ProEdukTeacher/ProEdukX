@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
 
 
-    >
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Asistencia"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".Asistencia">
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/Asistencia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:context=".Asistencia">
-
-        <androidx.appcompat.widget.SearchView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:searchHintIcon="@drawable/ic_search"
-            android:background="@drawable/custom_input"
-            />
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -36,7 +28,5 @@
             android:verticalScrollbarPosition="right" />
 
 
-    </LinearLayout>
-
-
+</LinearLayout>
 </androidx.core.widget.NestedScrollView>

@@ -49,7 +49,10 @@ public class Asistencia extends Fragment implements Binary.OnInputSelected {
 
 
     private RecyclerView.Adapter adapter;
-
+    ArrayList<Lasmateriasatt> materiasatt;
+    RecyclerView recyclerAtt;
+    RecyclerView.Adapter myAdapteratt;
+    RecyclerView.LayoutManager layoutManageratt;
     private Button fab;
     private TextView textView;
     private EditText class_wel;
@@ -105,12 +108,21 @@ public class Asistencia extends Fragment implements Binary.OnInputSelected {
     @Override
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_asistencia, container, false);
-
-
-        return rootView;
+        return inflater.inflate(R.layout.fragment_asistencia, container, false);
 
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+        materiasatt = new ArrayList<>();
+        recyclerAtt = view.findViewById(R.id.list3);
+        recyclerAtt.setHasFixedSize(true);
+        layoutManageratt = new LinearLayoutManager(this.getActivity());
+        recyclerAtt.setLayoutManager(layoutManageratt);
+        myAdapteratt = new AttendanceRecyclerAdapter(getContext(), ApplicationClass.materiasatt);
+        recyclerAtt.setAdapter(myAdapteratt);
+
+    }
 }

@@ -7,12 +7,20 @@
 
 
 
+
     </style>
 
     <style name="ShapeAppearanceOverlayExtended" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">0dp</item>
         <item name="cornerSizeTopLeft">50%</item>
+        <item name="cornerSizeTopRight">50%</item>
+        <item name="color">#114c9e</item>
+
+
+
+
+
     </style>
 
 

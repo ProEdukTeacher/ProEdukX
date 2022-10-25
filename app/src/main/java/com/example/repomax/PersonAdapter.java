@@ -25,7 +25,6 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.Lasmateria
     private ArrayList<Lasmaterias> materias;
     private Context context;
     private PersonAdapter adapter;
-    private View view;
 
     public interface OnItemClickListener {
         void OnItemClick(int position);
@@ -102,7 +101,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.Lasmateria
     public PersonAdapter.LasmateriasViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
 
-        view = LayoutInflater.from(viewGroup.getContext())
+        View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.class_item, viewGroup, false);
 
 
