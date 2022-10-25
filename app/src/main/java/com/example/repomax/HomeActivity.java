@@ -42,6 +42,12 @@ import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,6 +74,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     View headerView;
 
     FirebaseAuth mAuth;
+    FirebaseUser user;
+    DatabaseReference mDatabase;
+    String userID;
     TextView namer, emailer;
     ShapeableImageView profp;
     ImageView profileImage;
@@ -86,6 +95,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         namer = findViewById(R.id.name);
         emailer = findViewById(R.id.theemail);
         mAuth = SessionManager.getInstance().getmAuth();
+        user = mAuth.getCurrentUser();
+        mDatabase = SessionManager.getInstance().getFirebaseDatabase().getReference(TeacherUser.class.getSimpleName());
+        userID = user.getUid();
+
+        getUserInformation();
 //        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
 //        gsc = GoogleSignIn.getClient(this, gso);
 //
@@ -104,7 +118,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         drawerLayout = findViewById(R.id.drawing_layout);
         navigationView = findViewById(R.id.navigationView);
 
-        getname();
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_open, R.string.menu_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
@@ -185,10 +198,29 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void getname() {
-        Log.d("TAG", "getname: "+ mAuth.getCurrentUser().getDisplayName());
-        namer.setText(Objects.requireNonNull(mAuth.getCurrentUser()).getDisplayName());
+    private void getUserInformation() {
+
+        mDatabase.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                TeacherUser user = snapshot.getValue(TeacherUser.class);
+
+                if(user!=null){
+                    String fullName = user.getName();
+                    String email = user.getEmail();
+
+                    namer.setText(fullName);
+                    emailer.setText(email);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
+
 
     private void gotoProfile() {
 
