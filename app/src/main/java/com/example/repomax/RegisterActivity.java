@@ -12,10 +12,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import java.util.ArrayList;
 
@@ -118,11 +122,23 @@ public class RegisterActivity extends AppCompatActivity {
         } else {
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
+
                     TeacherUser tea = new TeacherUser(firstName,
                             lastName, email, tvDat.getText().toString());
-                    daoTeacher.add(tea);
-                    Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(RegisterActivity.this, getstarted1.class));
+                    daoTeacher.add(tea).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+
+                            if (task.isSuccessful()) {
+                                Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(RegisterActivity.this, getstarted1.class));
+                            }else {
+                                Toast.makeText(RegisterActivity.this, "Please Retry", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    });
+
                 } else {
                     Toast.makeText(RegisterActivity.this, "Error en registro" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
 

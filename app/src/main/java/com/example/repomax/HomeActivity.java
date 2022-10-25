@@ -66,6 +66,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
     View headerView;
+
+    FirebaseAuth mAuth;
     TextView namer, emailer;
     ShapeableImageView profp;
     ImageView profileImage;
@@ -83,23 +85,26 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         profp = findViewById(R.id.profpic);
         namer = findViewById(R.id.name);
         emailer = findViewById(R.id.theemail);
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        gsc = GoogleSignIn.getClient(this, gso);
-
-
-        GoogleSignInAccount acc = GoogleSignIn.getLastSignedInAccount(this);
-        if (acc != null) {
-
-            String personName = acc.getDisplayName();
-            String personEmail = acc.getEmail();
-            String profilepic = String.valueOf(acc.getPhotoUrl());
-        }
+        mAuth = SessionManager.getInstance().getmAuth();
+//        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+//        gsc = GoogleSignIn.getClient(this, gso);
+//
+//
+//        GoogleSignInAccount acc = GoogleSignIn.getLastSignedInAccount(this);
+//        if (acc != null) {
+//
+//            String personName = acc.getDisplayName();
+//            String personEmail = acc.getEmail();
+//            String profilepic = String.valueOf(acc.getPhotoUrl());
+//        }
 
         fragmentManager = this.getSupportFragmentManager();
 
         tabLayout = findViewById(R.id.tab_layout);
         drawerLayout = findViewById(R.id.drawing_layout);
         navigationView = findViewById(R.id.navigationView);
+
+        getname();
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_open, R.string.menu_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
@@ -178,6 +183,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         tabLayout.setupWithViewPager(viewPager);
 
 
+    }
+
+    private void getname() {
+        Log.d("TAG", "getname: "+ mAuth.getCurrentUser().getDisplayName());
+        namer.setText(Objects.requireNonNull(mAuth.getCurrentUser()).getDisplayName());
     }
 
     private void gotoProfile() {
