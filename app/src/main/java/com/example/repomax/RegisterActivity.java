@@ -131,7 +131,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                             if (task.isSuccessful()) {
                                 Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(RegisterActivity.this, getstarted1.class));
+                                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                             }else {
                                 Toast.makeText(RegisterActivity.this, "Please Retry", Toast.LENGTH_SHORT).show();
                             }

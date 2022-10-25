@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -88,8 +89,20 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(LoginActivity.this, "Inicio de Sesion", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+
+                    FirebaseUser user = SessionManager.getInstance().getmAuth().getCurrentUser();
+                    if(user.isEmailVerified()) {
+                        Toast.makeText(LoginActivity.this, "Inicio de Sesion", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LoginActivity.this, getstarted1.class));
+                    }else{
+                        Toast.makeText(LoginActivity.this, "Inicio de Sesion", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Check Your Email to verify your account", Toast.LENGTH_SHORT).show();
+                        user.sendEmailVerification();
+                        startActivity(new Intent(LoginActivity.this, getstarted1.class));
+
+
+                    }
+
 
                     /** Shoould update a value to database to know if its run or not run
                      as the user wont be bothered to read the get started after each login */
