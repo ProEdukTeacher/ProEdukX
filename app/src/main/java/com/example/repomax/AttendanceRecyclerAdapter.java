@@ -76,7 +76,7 @@ public class AttendanceRecyclerAdapter extends RecyclerView.Adapter<AttendanceRe
 
 
             tvsubjects = itemviewatt.findViewById(R.id.tvsubject);
-
+            tvcourses = itemviewatt.findViewById(R.id.Tvcourse);
 
 
             itemviewatt.setOnClickListener(v -> {
