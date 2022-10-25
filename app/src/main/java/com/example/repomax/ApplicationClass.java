@@ -33,7 +33,7 @@ public class ApplicationClass extends Application {
         materias = new ArrayList<>();
         materias.add(new Lasmaterias("Español", "Noveno Grado"));
         materiasatt = new ArrayList<>();
-        materiasatt.add(new Lasmateriasatt("",""));
+        materiasatt.add(new Lasmateriasatt("Ciencia",""));
 
 
 
