@@ -33,11 +33,6 @@ public class LoginActivity extends AppCompatActivity {
     GoogleSignInClient gsc;
     TextView resetLink;
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
