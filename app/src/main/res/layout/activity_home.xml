@@ -141,7 +141,7 @@
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="847dp"
-            android:background="@drawable/otroblue"
+            android:background="@drawable/somepencils"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
             app:tabMode="scrollable"
 

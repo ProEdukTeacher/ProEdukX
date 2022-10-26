@@ -18,6 +18,7 @@ public class ApplicationClass extends Application {
 
     public static ArrayList<Lasmaterias> materias;
     public static ArrayList<Lasmateriasatt> materiasatt;
+    public static ArrayList<Lasnotasmat> lasnotasmat;
 
 
 
@@ -34,6 +35,9 @@ public class ApplicationClass extends Application {
         materias.add(new Lasmaterias("Español", "Noveno Grado"));
         materiasatt = new ArrayList<>();
         materiasatt.add(new Lasmateriasatt("9","Ciencia"));
+        lasnotasmat = new ArrayList<>();
+        lasnotasmat.add(new Lasnotasmat("English", "Noveno Grado"));
+
 
 
 

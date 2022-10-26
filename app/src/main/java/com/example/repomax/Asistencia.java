@@ -44,8 +44,7 @@ public class Asistencia extends Fragment implements Binary.OnInputSelected {
     }
 
 
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
+
 
 
     private RecyclerView.Adapter adapter;
@@ -53,12 +52,7 @@ public class Asistencia extends Fragment implements Binary.OnInputSelected {
     RecyclerView recyclerAtt;
     RecyclerView.Adapter myAdapteratt;
     RecyclerView.LayoutManager layoutManageratt;
-    private Button fab;
-    private TextView textView;
-    private EditText class_wel;
-    private EditText subject_wel;
-    private Button cancel;
-    private Button AddIt;
+
 
 
     // TODO: Rename parameter arguments, choose names that match
