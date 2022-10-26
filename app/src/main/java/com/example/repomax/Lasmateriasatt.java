@@ -7,7 +7,7 @@ public class Lasmateriasatt {
     private String grades;
     private String classes;
 
-    public Lasmateriasatt(String grade, String classes) {
+    public Lasmateriasatt(String grades, String classes) {
         this.grades = grades;
         this.classes = classes;
     }
@@ -31,7 +31,7 @@ public class Lasmateriasatt {
         return classes;
     }
 
-    public void setClasses(String name) {
+    public void setClasses(String classes) {
         this.classes = classes;
     }
 
@@ -39,7 +39,7 @@ public class Lasmateriasatt {
         return grades;
     }
 
-    public void setGrade(String telNr) {
+    public void setGrade(String grades) {
         this.grades = grades;
     }
 }
