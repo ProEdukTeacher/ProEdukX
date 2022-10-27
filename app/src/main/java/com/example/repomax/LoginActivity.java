@@ -5,11 +5,14 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +29,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class LoginActivity extends AppCompatActivity {
-    Button sin;
+    LinearLayout sin;
+    Button btnre;
     EditText LogEmail, LogPassword;
     FirebaseAuth mAuth;
     GoogleSignInOptions gso;
@@ -37,6 +41,14 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Register Button
+        btnre = findViewById(R.id.registosan);
+        btnre.setOnClickListener(v -> {
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
+
+        });
 
         //Google Sign in Options//
 
@@ -59,11 +71,7 @@ public class LoginActivity extends AppCompatActivity {
        loginUser();
         });
 
-        Button goback = findViewById(R.id.gobacktoit);
-        goback.setOnClickListener(v -> {
-            Intent intent = new Intent(this, Splashzone.class);
-            startActivity(intent);
-        });
+
 
         LogEmail = findViewById(R.id.LoginEmails);
         LogPassword = findViewById(R.id.LoginPasswords);

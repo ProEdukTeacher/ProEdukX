@@ -8,18 +8,7 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-    <Button
-        android:id="@+id/gobacktoit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:background="@drawable/testgrad"
-        android:drawableStart="@drawable/arrowback"
-        android:drawableLeft="@drawable/arrowback"
-        android:drawablePadding="0dp"
 
-        />
 
 
 
@@ -28,7 +17,7 @@
         android:layout_width="234dp"
         android:layout_height="185dp"
         android:layout_gravity="center"
-        android:layout_margin="1dp"
+        android:layout_marginTop="5dp"
         android:layout_marginHorizontal="65dp"
         android:contentDescription="@string/proeduk_teaching_services"
         android:src="@drawable/logotreal"
@@ -45,10 +34,10 @@
         android:layout_marginTop="10dp"
         android:fontFamily="sans-serif-black"
         android:gravity="start"
-        android:text="@string/username"
+        android:text="@string/e_mail"
         android:textColor="#ffffff"
         android:textSize="25sp"
-        tools:text="User Name" />
+         />
 
     <EditText
         android:id="@+id/LoginEmails"
@@ -144,12 +133,55 @@
         android:layout_gravity="center_horizontal"/>
 
     <Button
-        android:id="@+id/SIBTN"
-        android:layout_width="310dp"
-        android:layout_height="61dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/gsu" />
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/registosan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/custom_change"
+        android:text="⌨ Registrarse"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        android:textStyle="bold"
 
+        />
+    
+    <LinearLayout
+        android:id="@+id/SIBTN"
+        android:clickable="true"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/googlebutton"
+        android:layout_gravity="center_horizontal">
+        
+        
+        <ImageView
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/googlelogo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up with Google"
+            android:textSize="20sp"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            />
+
+        
+        
+        
+        
+    </LinearLayout>
+        
+
+    
 </LinearLayout>
+
+

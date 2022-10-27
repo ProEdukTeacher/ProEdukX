@@ -37,32 +37,7 @@
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@id/cloverimg">
 
-        <Button
-            android:id="@+id/abtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="112dp"
-            android:background="@drawable/custom_change"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="✎ Accesar"
-            android:textColor="#fff"
-            android:textSize="25sp"
-            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/registobtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="75dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/custom_change"
-            android:text="⌨ Registrarse"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:textSize="25sp"
-            android:textStyle="bold"
-
-            />
 
 
     </LinearLayout>

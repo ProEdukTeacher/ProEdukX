@@ -11,11 +11,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Splashzone extends AppCompatActivity {
 
     ImageView bgapp, cloverimg;
     LinearLayout splashtext, hometext, accbtn;
     Animation frombottom;
+    Timer timer;
 
 
 
@@ -26,19 +30,11 @@ public class Splashzone extends AppCompatActivity {
        checkifUserIsAuthOrNot();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashzone);
-        Button btnre = findViewById(R.id.registobtn);
-        btnre.setOnClickListener(v -> {
-            Intent intent = new Intent(this, RegisterActivity.class);
-            startActivity(intent);
 
-        });
 
-        Button abtn = findViewById(R.id.abtn);
-        abtn.setOnClickListener(v -> {
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
 
-        });
+
+
 
         frombottom = AnimationUtils.loadAnimation(this, R.anim.frombottom);
 
@@ -53,6 +49,21 @@ public class Splashzone extends AppCompatActivity {
         splashtext.animate().translationY(140).alpha(0).setDuration(2000).setStartDelay(600);
         hometext.startAnimation(frombottom);
         accbtn.startAnimation(frombottom);
+
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+
+                Intent intent = new Intent(Splashzone.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+
+            }
+        },2500);
+
+
+
     }
 
     private void checkifUserIsAuthOrNot() {
