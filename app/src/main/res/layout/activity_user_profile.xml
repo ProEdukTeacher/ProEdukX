@@ -32,7 +32,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/userPFP"
                         android:layout_width="160dp"
                         android:layout_height="109dp"
                         android:layout_marginTop="45dp"
@@ -42,27 +42,27 @@
                         app:srcCompat="@drawable/circularfinal" />
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/nameofuserdp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Jadiel Estrada"
                         android:textColor="#ffffff"
                         android:textSize="24sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-                        app:layout_constraintStart_toStartOf="@+id/imageView2"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                        app:layout_constraintEnd_toEndOf="@+id/userPFP"
+                        app:layout_constraintStart_toStartOf="@+id/userPFP"
+                        app:layout_constraintTop_toBottomOf="@+id/userPFP" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/uemaildp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="jadiedgi@gmail.com"
                         android:textColor="#ffffff"
                         android:textSize="17sp"
-                        app:layout_constraintEnd_toEndOf="@+id/textView"
-                        app:layout_constraintStart_toStartOf="@+id/textView"
-                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+                        app:layout_constraintEnd_toEndOf="@+id/nameofuserdp"
+                        app:layout_constraintStart_toStartOf="@+id/nameofuserdp"
+                        app:layout_constraintTop_toBottomOf="@+id/nameofuserdp" />
 
                     <ImageView
                         android:id="@+id/imageViews3"
@@ -90,7 +90,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView2">
+                        app:layout_constraintTop_toBottomOf="@+id/uemaildp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -113,7 +113,7 @@
                                     android:background="@drawable/circle_background">
 
                                     <ImageView
-                                        android:id="@+id/loria"
+                                        android:id="@+id/subICON"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,7 +124,7 @@
                                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                                 <TextView
-                                    android:id="@+id/lag"
+                                    android:id="@+id/subscription"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="8dp"
@@ -152,7 +152,7 @@
                                     android:background="@drawable/circle_background">
 
                                     <ImageView
-                                        android:id="@+id/veras"
+                                        android:id="@+id/settingsICON"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         app:layout_constraintBottom_toBottomOf="parent"
@@ -163,7 +163,7 @@
                                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                                 <TextView
-                                    android:id="@+id/pronto"
+                                    android:id="@+id/settingstag"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="8dp"
@@ -191,7 +191,7 @@
                                     android:background="@drawable/circle_background">
 
                                     <ImageView
-                                        android:id="@+id/imageView0222"
+                                        android:id="@+id/notificationICON"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         app:layout_constraintBottom_toBottomOf="parent"
@@ -202,7 +202,7 @@
                                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                                 <TextView
-                                    android:id="@+id/tex0923"
+                                    android:id="@+id/notificationTAG"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="8dp"
@@ -221,7 +221,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/tex0193"
+                                android:id="@+id/nameHV"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
@@ -231,7 +231,7 @@
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:id="@+id/tex890"
+                                android:id="@+id/nameDisplay"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -244,7 +244,7 @@
                         </LinearLayout>
 
                         <View
-                            android:id="@+id/vicil"
+                            android:id="@+id/DivLine1"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginStart="10dp"
@@ -259,7 +259,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/textVroap"
+                                android:id="@+id/EmailHV"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
@@ -269,7 +269,7 @@
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:id="@+id/textVoem"
+                                android:id="@+id/EmailDisplay"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -282,7 +282,7 @@
                         </LinearLayout>
 
                         <View
-                            android:id="@+id/viewdios"
+                            android:id="@+id/DivLine2"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginStart="10dp"
@@ -298,7 +298,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/textView223"
+                                android:id="@+id/AcademivHV"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
@@ -308,7 +308,7 @@
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:id="@+id/textView090"
+                                android:id="@+id/AcademicDisplay"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -322,7 +322,7 @@
                         </LinearLayout>
 
                         <View
-                            android:id="@+id/view94"
+                            android:id="@+id/DivLine3"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginStart="10dp"
@@ -337,7 +337,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/textVipo"
+                                android:id="@+id/classesHV"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
@@ -347,7 +347,7 @@
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:id="@+id/textView09"
+                                android:id="@+id/classesDisplay"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -362,7 +362,7 @@
                         </LinearLayout>
 
                         <View
-                            android:id="@+id/viewz"
+                            android:id="@+id/DivLine4"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginStart="10dp"
@@ -374,6 +374,7 @@
                         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/EditProfileBtn"
                             android:text="Edit Profile"
                             android:textColor="#ffffff"
                             android:layout_marginTop="50dp"

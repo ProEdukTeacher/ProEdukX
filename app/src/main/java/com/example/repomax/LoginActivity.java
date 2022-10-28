@@ -111,6 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
 
                     FirebaseUser user = SessionManager.getInstance().getmAuth().getCurrentUser();
+
                     if(user.isEmailVerified()) {
                         Toast.makeText(LoginActivity.this, "Inicio de Sesion", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(LoginActivity.this, getstarted1.class));
