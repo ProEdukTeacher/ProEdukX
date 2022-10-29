@@ -146,7 +146,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
-        if (view.getId() == R.id.registosan) {
+        if (view.getId() == R.id.btnregist) {
 
             createUser();
 
