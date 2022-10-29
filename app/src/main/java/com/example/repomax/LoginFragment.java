@@ -62,7 +62,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
 
         if (view.getId() == R.id.registosan) {
-            Intent intent = new Intent(requireContext(), RegisterActivity.class);
+            Intent intent = new Intent(requireContext(), RegisterFragment.class);
             startActivity(intent);
         } else if (view.getId() == R.id.loginButton) {
             loginUser();

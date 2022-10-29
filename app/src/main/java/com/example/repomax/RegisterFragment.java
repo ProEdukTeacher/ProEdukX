@@ -1,31 +1,31 @@
 package com.example.repomax;
 
-
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
 import android.text.TextUtils;
-
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
-
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
-
 import java.util.Objects;
 
-public class RegisterActivity extends AppCompatActivity {
 
+public class RegisterFragment extends Fragment implements View.OnClickListener {
 
     TextView tvDat;
     EditText etemail, etpass, etpassc, uname, ulastname;
@@ -37,27 +37,36 @@ public class RegisterActivity extends AppCompatActivity {
     String[] dayArray = {"Escuela Elemental", "Escuela Intermedia", "Escuela Superior"};
 
 
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-        uname = findViewById(R.id.username);
-        ulastname = findViewById(R.id.lastnames);
-        tvDat = findViewById(R.id.muestrame);
-        etemail = findViewById(R.id.getEmail);
-        etpass = findViewById(R.id.getPass);
-        etpassc = findViewById(R.id.getPassc);
-        btnreg = findViewById(R.id.btnregist);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
+        uname = view.findViewById(R.id.username);
+        ulastname = view.findViewById(R.id.lastnames);
+        tvDat = view.findViewById(R.id.muestrame);
+        etemail = view.findViewById(R.id.getEmail);
+        etpass = view.findViewById(R.id.getPass);
+        etpassc = view.findViewById(R.id.getPassc);
         mAuth = SessionManager.getInstance().getmAuth();
         daoTeacher = new DAOTeacher();
-        btnreg.setOnClickListener(view -> createUser());
+        btnreg = view.findViewById(R.id.btnregist);
+        btnreg.setOnClickListener(this);
 
         tvDat.setOnClickListener(v -> {
             //Initialize alert dialog
 
             AlertDialog.Builder builder = new AlertDialog.Builder(
 
-                    RegisterActivity.this
+                    requireActivity()
 
             );
             //Set title
@@ -83,7 +92,9 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
 
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+    return view;
     }
 
     private void createUser() {
@@ -129,22 +140,32 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
 
                             if (task.isSuccessful()) {
-                                Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                                Toast.makeText(getActivity(), "Usuario Registrado", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getActivity(), LoginActivity.class));
                             }else {
-                                Toast.makeText(RegisterActivity.this, "Please Retry", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "Please Retry", Toast.LENGTH_SHORT).show();
                             }
 
                         }
                     });
 
                 } else {
-                    Toast.makeText(RegisterActivity.this, "Error en registro" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Error en registro" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
 
                 }
             });
         }
     }
+
+    @Override
+    public void onClick(View view) {
+
+        if (view.getId() == R.id.registosan) {
+
+            createUser();
+
+
+        }
+
+    }
 }
-
-
