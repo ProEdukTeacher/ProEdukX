@@ -63,16 +63,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
-    Button btndrawer;
     TabLayout tabLayout;
     ViewPager viewPager;
     Toolbar toolbar;
-    EditText className, SectionName;
-    Button addClass, cancelClass;
-    Planes planes;
     FragmentManager fragmentManager;
-    GoogleSignInOptions gso;
-    GoogleSignInClient gsc;
     View headerView;
 
     FirebaseAuth mAuth;
