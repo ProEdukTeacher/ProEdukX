@@ -49,12 +49,17 @@ public class Binary extends AppCompatDialogFragment {
 
 
     private void onClick(View v) {
+
+
+
         if (classtup.getText().toString().isEmpty() || Sectiones.getText().toString().isEmpty()) {
 
             Toast.makeText(getContext(), "Llene todos los campos", Toast.LENGTH_LONG).show();
 
 
         } else {
+
+
 
             ApplicationClass.materias.add(new Lasmaterias(classtup.getText().toString().trim(),
                     Sectiones.getText().toString().trim()));
@@ -78,7 +83,8 @@ public class Binary extends AppCompatDialogFragment {
             dismiss();
 
 
-        } 
+        }
+
 
 
 
@@ -137,6 +143,11 @@ public class Binary extends AppCompatDialogFragment {
         selectedGrad = new boolean[gradArray.length];
         selectedClis = new boolean[clisArray.length];
         selectedDay = new boolean[dayArray.length];
+
+
+
+
+
 
         Sectiones.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -201,6 +212,12 @@ public class Binary extends AppCompatDialogFragment {
                 builder.show();
             }
         });
+
+
+
+
+
+
 
 
 

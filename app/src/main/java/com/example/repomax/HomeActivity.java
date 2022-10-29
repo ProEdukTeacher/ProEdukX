@@ -49,7 +49,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 
@@ -89,7 +91,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //Assign variable
-
+        Calendar calendar = Calendar.getInstance();
+        String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
         profp = findViewById(R.id.profile_image);
         namer = findViewById(R.id.name);
         emailer = findViewById(R.id.theemail);
@@ -112,7 +115,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 //        }
 
         fragmentManager = this.getSupportFragmentManager();
-
+        TextView datetaker = findViewById(R.id.dateshower);
+        datetaker.setText(currentDate);
         tabLayout = findViewById(R.id.tab_layout);
         drawerLayout = findViewById(R.id.drawing_layout);
         navigationView = findViewById(R.id.navigationView);
