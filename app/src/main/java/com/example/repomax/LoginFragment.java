@@ -31,6 +31,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     //    GoogleSignInOptions gso;
 //    GoogleSignInClient gsc;
     TextView resetLink;
+    final String loginFrag = String.valueOf(this.getClass().getName());
 
 
     @Override
@@ -62,8 +63,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
 
         if (view.getId() == R.id.registosan) {
-            Intent intent = new Intent(requireContext(), RegisterFragment.class);
-            startActivity(intent);
+           registrationStart();
         } else if (view.getId() == R.id.loginButton) {
             loginUser();
         }else if(view.getId() == R.id.resetLink){
@@ -72,10 +72,18 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     }
 
+    private void registrationStart() {
+        Log.d("TAG", "resetfunction: ");
+
+        getParentFragmentManager().beginTransaction()
+                .replace(R.id.loginActivityContainer,new RegisterFragment())
+                .addToBackStack(loginFrag)
+                .commit();
+    }
+
 
     private void resetfunction() {
         Log.d("TAG", "resetfunction: ");
-        String loginFrag = String.valueOf(this.getClass().getName());
         getParentFragmentManager().beginTransaction()
                 .replace(R.id.loginActivityContainer,new ResetPasswordFragment())
                 .addToBackStack(loginFrag)

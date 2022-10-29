@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -33,9 +34,8 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     FirebaseAuth mAuth;
     ArrayList<Integer> dayList = new ArrayList<>();
     DAOTeacher daoTeacher;
-
-    String[] dayArray = {"Escuela Elemental", "Escuela Intermedia", "Escuela Superior"};
-
+    public static final String REQUEST_KEY= "FragmentResult";
+    public static final String RESULT_KEY="academicSelection";
 
 
 
@@ -64,31 +64,17 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         tvDat.setOnClickListener(v -> {
             //Initialize alert dialog
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(
+            RegistrationDialogueFragment registrationDialogueFragment = new RegistrationDialogueFragment();
+            registrationDialogueFragment.show(getChildFragmentManager(),"Dialogue");
 
-                    requireActivity()
 
-            );
-            //Set title
-            builder.setTitle("Seleccione Nivel");
-            //Set dialog non cancellable
-            builder.setCancelable(false);
-
-            builder.setSingleChoiceItems(dayArray, -1, (dialogInterface, i) -> {
-
-                if (!dayList.isEmpty()) {
-                    dayList.clear();
-                } else {
-                    dayList.add(i);
+            getChildFragmentManager().setFragmentResultListener(REQUEST_KEY, this, new FragmentResultListener() {
+                @Override
+                public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                    String results = result.getString(RESULT_KEY);
+                    tvDat.setText(results);
                 }
-
             });
-
-            builder.setPositiveButton("Ok", (dialog, which) -> tvDat.setText(dayArray[dayList.get(0)]));
-            builder.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());
-
-
-            builder.show();
         });
 
 
