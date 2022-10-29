@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/pencilsbik"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    app:defaultNavHost="true"
+    >
 
     <ImageView
 
