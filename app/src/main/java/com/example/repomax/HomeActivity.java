@@ -78,8 +78,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     DatabaseReference mDatabase;
     String userID;
     TextView namer, emailer;
-    ShapeableImageView profp;
-    ImageView profileImage;
+    ImageView profp, profileImage;
 
 
     @Override
@@ -91,7 +90,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         //Assign variable
 
-        profp = findViewById(R.id.profpic);
+        profp = findViewById(R.id.profile_image);
         namer = findViewById(R.id.name);
         emailer = findViewById(R.id.theemail);
         mAuth = SessionManager.getInstance().getmAuth();
