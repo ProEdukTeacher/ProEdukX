@@ -75,7 +75,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private void resetfunction() {
         Log.d("TAG", "resetfunction: ");
-        getParentFragmentManager().beginTransaction().replace(R.id.loginActivityContainer,new ResetPasswordFragment()).commit();
+        String loginFrag = String.valueOf(this.getClass().getName());
+        getParentFragmentManager().beginTransaction()
+                .replace(R.id.loginActivityContainer,new ResetPasswordFragment())
+                .addToBackStack(loginFrag)
+                .commit();
 
 
     }
