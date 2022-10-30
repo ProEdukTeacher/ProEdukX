@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
 
-        android:background="@drawable/beautifulbooks"
+        android:background="@drawable/uls"
         >
 
 
@@ -21,7 +21,7 @@
             android:id="@+id/cloverimg"
             android:layout_width="216dp"
             android:layout_height="209dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="-8dp"
             android:layout_marginEnd="0dp"
             android:elevation="6dp"
             android:src="@drawable/logotreal"
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="120dp"
                 android:fontFamily="sans-serif-smallcaps"
-                android:text="WELCOME"
+                android:text="ProEduk"
                 android:textColor="#fff"
                 android:textSize="31sp"
                 android:textStyle="bold" />
@@ -93,12 +93,12 @@
             android:id="@+id/hometext"
             android:layout_width="349dp"
             android:layout_height="81dp"
+            android:layout_marginTop="48dp"
             android:elevation="6dp"
             android:gravity="left"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="60dp"
             app:layout_constraintEnd_toEndOf="parent"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -147,5 +147,4 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
-
 

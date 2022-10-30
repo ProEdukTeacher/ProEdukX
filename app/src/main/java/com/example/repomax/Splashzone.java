@@ -44,7 +44,7 @@ public class Splashzone extends AppCompatActivity {
         accbtn = findViewById(R.id.accbtn);
 
         bgapp.animate().translationY(-1200).setDuration(2000).setStartDelay(300);
-        cloverimg.animate().alpha(0).setDuration(2000).setStartDelay(600);
+        cloverimg.startAnimation(frombottom);
         splashtext.animate().translationY(140).alpha(0).setDuration(2000).setStartDelay(600);
         hometext.startAnimation(frombottom);
         accbtn.startAnimation(frombottom);
@@ -59,7 +59,7 @@ public class Splashzone extends AppCompatActivity {
                         finish();
 
             }
-        },2500);
+        },10500);
 
 
 
