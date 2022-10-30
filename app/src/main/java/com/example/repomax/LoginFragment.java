@@ -34,11 +34,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     final String loginFrag = String.valueOf(this.getClass().getName());
 
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

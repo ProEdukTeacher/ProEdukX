@@ -59,7 +59,7 @@ public class Splashzone extends AppCompatActivity {
                         finish();
 
             }
-        },10500);
+        },2500);
 
 
 
@@ -71,8 +71,14 @@ public class Splashzone extends AppCompatActivity {
             Log.d("Test", "checkifUserIsAuthOrNot: "+ SessionManager.getInstance().getmAuth().getCurrentUser());
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
+
         }
     }
 
+    @Override
+    protected void onStop() {
+        timer.cancel();
+        super.onStop();
 
+    }
 }
