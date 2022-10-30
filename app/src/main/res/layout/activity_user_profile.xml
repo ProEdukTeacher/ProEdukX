@@ -237,8 +237,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginEnd="10dp"
                                 android:layout_weight="1"
-                                android:cursorVisible="false"
-                                android:clickable="false"
+                                android:focusable="false"
                                 android:background="@null"
                                 android:text="Jadiel Estrada Adorno"
                                 android:textAlignment="viewEnd"
@@ -272,12 +271,13 @@
                                 android:textSize="18sp" />
 
                             <EditText
-                                android:id="@+id/EmailDisplay"
+                                android:id="@+id/emailDisplay"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginEnd="10dp"
                                 android:layout_weight="1"
+                                android:focusable="false"
                                 android:background="@null"
                                 android:text="jadiedgi@gmail.com"
                                 android:textAlignment="viewEnd"
@@ -312,13 +312,14 @@
                                 android:textSize="18sp" />
 
                             <EditText
-                                android:id="@+id/AcademicDisplay"
+                                android:id="@+id/academicDisplay"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginEnd="10dp"
                                 android:layout_weight="1"
                                 android:background="@null"
+                                android:focusable="false"
                                 android:text="Escuela Intermedia"
                                 android:textAlignment="viewEnd"
                                 android:textColor="#5B5B5B"
@@ -328,87 +329,6 @@
 
                         <View
                             android:id="@+id/DivLine3"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginStart="10dp"
-
-                            android:layout_marginTop="6dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="#D9D9D9" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/classesHV"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:layout_weight="1"
-                                android:text="Clases/Grupos"
-                                android:textColor="#182693"
-                                android:textSize="18sp" />
-
-                            <TextView
-                                android:id="@+id/classesDisplay"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginEnd="10dp"
-                                android:layout_weight="1"
-                                android:text="Editar"
-                                android:textAlignment="viewEnd"
-                                android:textColor="#5B5B5B"
-                                android:textSize="18sp" />
-
-
-
-
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-
-
-                            <EditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=""
-                                android:editable="false"
-                                android:textColor="#5B5B5B"
-                                android:layout_marginStart="10dp"/>
-                            <EditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=""
-                                android:editable="false"
-                                android:textColor="#5B5B5B"
-                                android:layout_marginStart="10dp"/>
-                            <EditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=""
-                                android:editable="false"
-                                android:textColor="#5B5B5B"
-                                android:layout_marginStart="10dp"/>
-                            <EditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="testu"
-                                android:editable="false"
-                                android:textColor="#5B5B5B"
-                                android:layout_marginStart="10dp"/>
-
-
-                        </LinearLayout>
-
-
-                        <View
-                            android:id="@+id/DivLine4"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginStart="10dp"
