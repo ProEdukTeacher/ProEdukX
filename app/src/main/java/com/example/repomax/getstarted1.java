@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class getstarted1 extends AppCompatActivity {
 
     ViewPager mSlideViewPager;
@@ -58,7 +60,7 @@ public class getstarted1 extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void setUpIndicator(int position) {
 
-        dots = new TextView[4];
+        dots = new TextView[5];
         mDotLayout.removeAllViews();
 
         for (int i = 0; i < dots.length; i++) {
@@ -78,12 +80,17 @@ public class getstarted1 extends AppCompatActivity {
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+            if (position == Objects.requireNonNull(mSlideViewPager.getAdapter()).getCount()-1){
+                // Create the intent to launch the login screen.
+                Intent intent = new Intent(getstarted1.this, HomeActivity.class);
+                startActivity(intent);
+            }
         }
 
         @RequiresApi(api = Build.VERSION_CODES.M)
         @Override
         public void onPageSelected(int position) {
+
 
             setUpIndicator(position);
 

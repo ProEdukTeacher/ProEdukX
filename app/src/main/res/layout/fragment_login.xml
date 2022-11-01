@@ -95,7 +95,7 @@
         android:textStyle="bold"
         android:text="@string/olvido"
         android:inputType="textUri"
-        android:textColor="#ffffff"
+        android:textColor="#0000EE"
         android:clickable="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="-20dp"

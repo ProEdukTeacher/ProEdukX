@@ -5,7 +5,7 @@
     <string name="user_name">Username</string>
     <string name="menu_close">ProEduk</string>
     <string name="menu_open">ProEduk</string>
-    <string name="olvido"><u>¿Olvidó su nombre de usuario o contraseña? </u></string>
+    <string name="olvido"><u>¿Olvidó su contraseña? </u></string>
     <string name="proeduk_teaching_services">ProEduk Teaching Services</string>
     <string name="password">Password</string>
     <string name="login">LOGIN NOW</string>
@@ -51,12 +51,14 @@
     <string name="heading_two">Conéctate En Tu Computadora</string>
     <string name="heading_three">Amplia Biblioteca</string>
     <string name="heading_fourth">Maximiza Tu Tiempo</string>
+    <string name="heading_fifth">¡Bienvenidos, maestros!</string>
 
     //Description
     <string name="desc_one">Un excelente servicio de organización y planificación semanal para el maestro. </string>
     <string name="desc_two">¿Prefieres utilizar los servicios de ProEduk en computadora? Utiliza los servicios integrados en diferentes dispositivos. </string>
     <string name="desc_three">Busca el plan o recurso que necesites utilizando una biblioteca amplia; integra fotos, documentos, quiz y exámenes.</string>
     <string name="desc_fourth">¡Ejerce control de tu tiempo! ProEduk Teaching Services provee la capacidad para reducir el tiempo que toma planificar hasta un 75%</string>
+    <string name="desc_fifth" />
     <string name="title_activity_reg_gmail">Reg_Gmail</string>
 
 </resources>

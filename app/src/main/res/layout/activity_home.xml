@@ -45,7 +45,7 @@
                     android:layout_height="187dp"
                     android:layout_marginTop="48dp"
                     android:layout_marginBottom="48dp"
-                    android:background="@drawable/kidsschool"
+                    android:background="@drawable/aclassroom"
                     android:gravity="center">
 
 
@@ -56,7 +56,7 @@
                             android:layout_width="330dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:background="@color/cardview_light_background"
+                            app:cardBackgroundColor="#99FFFFFF"
                             app:cardCornerRadius="20dp"
 
                             >
@@ -82,7 +82,7 @@
                                 android:layout_height="wrap_content"
                                 app:cardCornerRadius="15dp"
                                 android:layout_marginStart="110dp"
-                                app:cardBackgroundColor="#FFFFFF"
+                                app:cardBackgroundColor="#99FFFFFF"
                                 android:layout_gravity="center_vertical"
                                 app:cardUseCompatPadding="true"
                                 >
@@ -100,7 +100,7 @@
                                         android:layout_marginStart="10dp"
                                         android:layout_gravity="start|center_horizontal"
                                         android:fontFamily="@font/poppins"
-                                        android:text="Dikyashi/Seth"
+                                        android:text=""
                                         android:textColor="#000000"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -114,7 +114,7 @@
                                         android:fontFamily="@font/poppins"
                                         android:layout_marginStart="10dp"
                                         android:layout_gravity="start|center_horizontal"
-                                        android:text="The Coders"
+                                        android:text=""
                                         android:textColor="#000000"
                                         android:textSize="15sp"
                                         android:textStyle="italic" />
@@ -127,7 +127,7 @@
                                         android:layout_gravity="start|center_horizontal"
                                         android:fontFamily="@font/poppins"
                                         android:gravity="start"
-                                        android:text="ddd"
+                                        android:text=""
                                         android:textAlignment="viewStart"
                                         android:textSize="13sp"
                                         android:textStyle="normal"
@@ -159,7 +159,7 @@
 
                     app:tabGravity="start"
                     app:tabIndicator="@drawable/tab_indicator"
-                    app:tabIndicatorAnimationMode="elastic"
+                    app:tabIndicatorAnimationMode="fade"
                     app:tabIndicatorGravity="stretch"
                     app:tabInlineLabel="true"
                     app:tabMode="scrollable"
