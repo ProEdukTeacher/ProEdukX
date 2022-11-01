@@ -61,4 +61,8 @@
     <string name="desc_fifth" />
     <string name="title_activity_reg_gmail">Reg_Gmail</string>
 
+    //GoogleServerClientIDForLogin
+
+    <string name="web_client_id">733447301089-ejgndj16tauhrh2ae0pe72g80nsj9mkr.apps.googleusercontent.com</string>
+
 </resources>
