@@ -45,7 +45,7 @@
                     android:layout_height="187dp"
                     android:layout_marginTop="48dp"
                     android:layout_marginBottom="48dp"
-                    android:background="@drawable/aclassroom"
+                    android:background="@drawable/emotyclassroom"
                     android:gravity="center">
 
 
@@ -84,7 +84,7 @@
                                 android:layout_marginStart="110dp"
                                 app:cardBackgroundColor="#99FFFFFF"
                                 android:layout_gravity="center_vertical"
-                                app:cardUseCompatPadding="true"
+
                                 >
 
                                 <LinearLayout
@@ -156,7 +156,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="@drawable/tab_background"
                     android:layout_gravity="bottom"
-
+                    app:tabRippleColor="@null"
                     app:tabGravity="start"
                     app:tabIndicator="@drawable/tab_indicator"
                     app:tabIndicatorAnimationMode="fade"
@@ -184,12 +184,7 @@
             />
 
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_anchor="@+id/view_pager"
-            app:layout_anchorGravity="top|center" />
+
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

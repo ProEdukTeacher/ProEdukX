@@ -221,7 +221,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void gotoProfile() {
 
-        Intent gotoProfile = new Intent(this, UserProfile.class);
+        Intent gotoProfile = new Intent(this, ProfiletesterActivity.class);
         startActivity(gotoProfile);
     }
 

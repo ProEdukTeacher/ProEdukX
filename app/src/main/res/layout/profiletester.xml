@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profilebackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/superior"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userPFP"
+                    android:layout_width="160dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="45dp"
+                    app:civ_border_color="#3480eb"
+                    app:civ_border_width="3dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/circularfinal" />
+
+
+
+                <ImageView
+                    android:id="@+id/imageViews3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/circles" />
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout_pf"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/profilebackground"
+        android:layout_gravity="bottom"
+        app:tabPaddingStart="10dp"
+        app:tabPaddingEnd="10dp"
+        app:tabMinWidth="130dp"
+        app:tabGravity="start"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorAnimationMode="fade"
+        app:tabIndicatorGravity="stretch"
+        app:tabInlineLabel="false"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="#000000" />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager_pf"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/blueback"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:tabMode="scrollable"
+
+        />
+
+
+
+
+</LinearLayout>

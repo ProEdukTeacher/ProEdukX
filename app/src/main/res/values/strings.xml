@@ -60,6 +60,7 @@
     <string name="desc_fourth">¡Ejerce control de tu tiempo! ProEduk Teaching Services provee la capacidad para reducir el tiempo que toma planificar hasta un 75%</string>
     <string name="desc_fifth" />
     <string name="title_activity_reg_gmail">Reg_Gmail</string>
+    <string name="title_activity_profile">Profile</string>
 
     //GoogleServerClientIDForLogin
 
