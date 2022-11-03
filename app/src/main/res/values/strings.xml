@@ -62,8 +62,144 @@
     <string name="title_activity_reg_gmail">Reg_Gmail</string>
     <string name="title_activity_profile">Profile</string>
 
+    //ArrayList for Dropdown Age
+
+    <string-array name="user_age">
+
+        <item>21</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60+</item>
+
+
+
+
+    </string-array>
+
+    <string-array name="user_pueblo">
+
+        <item>Adjuntas</item>
+        <item>Aguada</item>
+        <item>Aguadilla</item>
+        <item>Aguas Buenas</item>
+        <item>Aibonito</item>
+        <item>Arecibo</item>
+        <item>Arroyo</item>
+        <item>Añasco</item>
+        <item>Barceloneta</item>
+        <item>Barranquitas</item>
+        <item>Bayamón</item>
+        <item>Cabo Rojo</item>
+        <item>Caguas</item>
+        <item>Camuy</item>
+        <item>Canóvanas</item>
+        <item>Carolina</item>
+        <item>Cataño</item>
+        <item>Cayey</item>
+        <item>Ceiba</item>
+        <item>Ciales</item>
+        <item>Cidra</item>
+        <item>Coamo</item>
+        <item>Comerío</item>
+        <item>Corozal</item>
+        <item>Culebra</item>
+        <item>Dorado</item>
+        <item>Fajardo</item>
+        <item>Florida</item>
+        <item>Guayama</item>
+        <item>Guayanilla</item>
+        <item>Guaynabo</item>
+        <item>Gurabo</item>
+        <item>Guánica</item>
+        <item>Hatillo</item>
+        <item>Hormigueros</item>
+        <item>Humacao</item>
+        <item>Isabela</item>
+        <item>Jayuya</item>
+        <item>Juana Díaz</item>
+        <item>Juncos</item>
+        <item>Lajas</item>
+        <item>Lares</item>
+        <item>Las Marías</item>
+        <item>Las Piedras</item>
+        <item>Loiza</item>
+        <item>Luquillo</item>
+        <item>Manatí</item>
+        <item>Maricao</item>
+        <item>Maunabo</item>
+        <item>Mayagüez</item>
+        <item>Moca</item>
+        <item>Morovis</item>
+        <item>Naguabo</item>
+        <item>Naranjito</item>
+        <item>Orocovis</item>
+        <item>Patillas</item>
+        <item>Peñuelas</item>
+        <item>Ponce</item>
+        <item>Quebradillas</item>
+        <item>Rincón</item>
+        <item>Rio Grande</item>
+        <item>Sabana Grande</item>
+        <item>Salinas</item>
+        <item>San Germán</item>
+        <item>San Juan</item>
+        <item>San Lorenzo</item>
+        <item>San Sebastián</item>
+        <item>Santa Isabel</item>
+        <item>Toa Alta</item>
+        <item>Toa Baja</item>
+        <item>Trujillo Alto</item>
+        <item>Utuado</item>
+        <item>Vega Alta</item>
+        <item>Vieques</item>
+        <item>Villalba</item>
+        <item>Yabucoa</item>
+        <item>Yauco</item>
+
+
+
+    </string-array>
+
     //GoogleServerClientIDForLogin
 
     <string name="web_client_id">733447301089-ejgndj16tauhrh2ae0pe72g80nsj9mkr.apps.googleusercontent.com</string>
+    <string name="qu_edad_tiene">¿Qué edad tiene?</string>
 
 </resources>
