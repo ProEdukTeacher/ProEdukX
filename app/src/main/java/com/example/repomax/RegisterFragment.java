@@ -37,11 +37,11 @@ import java.util.Objects;
 
 public class RegisterFragment extends Fragment implements  View.OnClickListener{
 
-    TextView tvDat, textVew, textVew2;
+    TextView tvDat, textVew, textVew2, textVew3, textVew4;
     EditText etemail, etpass, etpassc, uname, ulastname;
     Button btnreg;
-    Dialog dialog, dialog2;
-    ArrayList<String> arrayList, arrayList2;
+    Dialog dialog, dialog2, dialog3, dialog4;
+    ArrayList<String> arrayList, arrayList2, arrayList3, arrayList4;
 
     FirebaseAuth mAuth;
     ArrayList<Integer> dayList = new ArrayList<>();
@@ -73,8 +73,12 @@ public class RegisterFragment extends Fragment implements  View.OnClickListener{
         btnreg = view.findViewById(R.id.btnregist);
         textVew = view.findViewById(R.id.text_view);
         textVew2 = view.findViewById(R.id.text_view2);
+        textVew3 = view.findViewById(R.id.text_view3);
+        textVew4 = view.findViewById(R.id.text_view4);
         arrayList = new ArrayList<>();
         arrayList2 = new ArrayList<>();
+        arrayList3 = new ArrayList<>();
+        arrayList4= new ArrayList<>();
 
         //ArrayLst values
 
@@ -115,6 +119,15 @@ public class RegisterFragment extends Fragment implements  View.OnClickListener{
         arrayList2.add("51"); arrayList2.add("52"); arrayList2.add("53"); arrayList2.add("54"); arrayList2.add("55");
         arrayList2.add("56"); arrayList2.add("57"); arrayList2.add("58"); arrayList2.add("59"); arrayList2.add("60+");
 
+
+        arrayList3.add("1"); arrayList3.add("2"); arrayList3.add("3"); arrayList3.add("4"); arrayList3.add("5");
+        arrayList3.add("6"); arrayList3.add("7"); arrayList3.add("8"); arrayList3.add("9"); arrayList3.add("10");
+        arrayList3.add("11"); arrayList3.add("12"); arrayList3.add("13"); arrayList3.add("14"); arrayList3.add("15");
+        arrayList3.add("16"); arrayList3.add("17"); arrayList3.add("18"); arrayList3.add("19"); arrayList3.add("20");
+        arrayList3.add("21"); arrayList3.add("22"); arrayList3.add("23"); arrayList3.add("24"); arrayList3.add("25+");
+
+        arrayList4.add("PlayStore"); arrayList4.add("Google"); arrayList4.add("Recomendacion"); arrayList4.add("FaceBook Ads");
+        arrayList4.add("Ninguna de las anteriores");
 
         textVew.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -219,6 +232,116 @@ public class RegisterFragment extends Fragment implements  View.OnClickListener{
                         textVew2.setText(adapter2.getItem(i));
 
                         dialog2.dismiss();
+
+                    }
+                });
+
+            }
+        });
+
+        textVew3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view3) {
+
+                dialog3 = new Dialog(getActivity());
+
+                dialog3.setContentView(R.layout.dialog_searchable_spinner);
+
+                dialog3.getWindow().setLayout(650, 800);
+
+                dialog3.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                dialog3.show();
+
+                EditText editText3 = dialog3.findViewById(R.id.edit_text);
+                ListView listView3 = dialog3.findViewById(R.id.list_view);
+
+                ArrayAdapter<String> adapter3 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1,
+                        arrayList3);
+
+                listView3.setAdapter(adapter3);
+
+                editText3.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                        adapter3.getFilter().filter(charSequence);
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+
+                    }
+                });
+
+                listView3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        textVew3.setText(adapter3.getItem(i));
+
+                        dialog3.dismiss();
+
+                    }
+                });
+
+            }
+        });
+
+        textVew4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                dialog4 = new Dialog(getActivity());
+
+                dialog4.setContentView(R.layout.dialog_searchable_spinner);
+
+                dialog4.getWindow().setLayout(650, 800);
+
+                dialog4.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                dialog4.show();
+
+                EditText editText4 = dialog4.findViewById(R.id.edit_text);
+                ListView listView4 = dialog4.findViewById(R.id.list_view);
+
+                ArrayAdapter<String> adapter4 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1,
+                        arrayList4);
+
+                listView4.setAdapter(adapter4);
+
+                editText4.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                        adapter4.getFilter().filter(charSequence);
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+
+                    }
+                });
+
+                listView4.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        textVew4.setText(adapter4.getItem(i));
+
+                        dialog4.dismiss();
 
                     }
                 });
