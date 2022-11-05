@@ -32,7 +32,6 @@ public class Planes extends Fragment {
 
     SharedPreferences sharedPreferences;
     Context mContext;
-    ArrayList<Lasmaterias> materias;
     RecyclerView recyclerView;
     RecyclerView.Adapter myAdapter;
     RecyclerView.LayoutManager layoutManager;
@@ -62,13 +61,12 @@ public class Planes extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        materias = new ArrayList<>();
         recyclerView = view.findViewById(R.id.list);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this.getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        myAdapter = new PersonAdapter(getContext(), ApplicationClass.materias);
+        myAdapter = new PersonAdapter(getContext(), ApplicationClass.materiasatt);
 
 
         recyclerView.setAdapter(myAdapter);
@@ -87,24 +85,11 @@ public class Planes extends Fragment {
 
         });
 
-        loadData();
 
 
     }
 
 
-    private void loadData() {
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        String json_string=sharedPreferences.getString(SP_KEY, null);
-        Gson gson = new Gson();
-        TypeToken typeToken= new TypeToken<ArrayList<Lasmaterias>>() {};
-        ArrayList<Lasmaterias> materias_local = gson.fromJson(json_string, typeToken.getType());
-
-        if (materias == null) {
-            materias = new ArrayList<>();
-        }
-
-    }
 
 
 }

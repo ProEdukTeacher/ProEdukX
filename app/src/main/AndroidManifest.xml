@@ -33,7 +33,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ProfiletesterActivity"/>
-        <activity android:name=".TeachMenu" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity" />
 

@@ -2,7 +2,9 @@ package com.example.repomax;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +19,7 @@ public class RegistrationDialogueFragment extends DialogFragment {
 
     private final
     String[] academics = {"Escuela Elemental", "Escuela Intermedia", "Escuela Superior"};
-    private List<Integer> academicSelection = new ArrayList<>();
+    private int academicSelection ;
 
 
     @NonNull
@@ -27,17 +29,18 @@ public class RegistrationDialogueFragment extends DialogFragment {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(requireContext(),0);
         builder.setTitle("Seleccione Nivel");
-        builder.setSingleChoiceItems(academics,-1,((dialogInterface, i) -> {
+        builder.setSingleChoiceItems(academics,academicSelection,(new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                academicSelection = i;
 
-            academicSelection.clear();
-            academicSelection.add(i);
-
+            }
         }));
 
         builder.setPositiveButton("Ok", (dialog, which) -> {
             Bundle result = new Bundle();
 
-            result.putString(RegisterFragment.RESULT_KEY, academics[academicSelection.get(0)]);
+            result.putString(RegisterFragment.RESULT_KEY, academics[academicSelection]);
             getParentFragmentManager().setFragmentResult(RegisterFragment.REQUEST_KEY, result);
             dialog.dismiss();
         });

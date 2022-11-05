@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.LasmateriasViewHolder> {
     private OnItemClickListener listener;
-    private ArrayList<Lasmaterias> materias;
+    private ArrayList<Lasmateriasatt> materias;
     private Context context;
     private PersonAdapter adapter;
 
@@ -39,7 +39,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.Lasmateria
     }
 
 
-    public PersonAdapter(Context context, ArrayList<Lasmaterias> list) {
+    public PersonAdapter(Context context, ArrayList<Lasmateriasatt> list) {
 
         this.context = context;
         this.materias = list;
@@ -48,7 +48,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.Lasmateria
     }
 
 
-    public void addMaterias(Lasmaterias lasmaterias) {
+    public void addMaterias(Lasmateriasatt lasmaterias) {
 
 
         notifyDataSetChanged();
@@ -113,8 +113,8 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.Lasmateria
     public void onBindViewHolder(@NonNull PersonAdapter.LasmateriasViewHolder viewHolder, int position) {
 
         viewHolder.itemView.setTag(materias.get(position));
-        viewHolder.tvName.setText(materias.get(position).getName());
-        viewHolder.tvGroup.setText(materias.get(position).getTelNr());
+        viewHolder.tvName.setText(materias.get(position).getClasses());
+        viewHolder.tvGroup.setText(materias.get(position).getGrades());
 
 
 

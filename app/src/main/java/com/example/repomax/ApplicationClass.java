@@ -16,11 +16,8 @@ public class ApplicationClass extends Application {
 
     public SessionManager mySession;
 
-    public static ArrayList<Lasmaterias> materias;
     public static ArrayList<Lasmateriasatt> materiasatt;
     public static ArrayList<Lasnotasmat> lasnotasmat;
-
-
 
 
     @Override
@@ -31,8 +28,6 @@ public class ApplicationClass extends Application {
         /* Todo: Load the data here from firebase */
 
 
-        materias = new ArrayList<>();
-        materias.add(new Lasmaterias("Español", "Noveno Grado"));
         materiasatt = new ArrayList<>();
         materiasatt.add(new Lasmateriasatt("9","Ciencia"));
         lasnotasmat = new ArrayList<>();

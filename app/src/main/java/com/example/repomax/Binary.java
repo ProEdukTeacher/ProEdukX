@@ -61,11 +61,11 @@ public class Binary extends AppCompatDialogFragment {
 
 
 
-            ApplicationClass.materias.add(new Lasmaterias(classtup.getText().toString().trim(),
+            ApplicationClass.materiasatt.add(new Lasmateriasatt(classtup.getText().toString().trim(),
                     Sectiones.getText().toString().trim()));
 
 
-            adapter.addMaterias(new Lasmaterias(classtup.getText().toString().trim(),
+            adapter.addMaterias(new Lasmateriasatt(classtup.getText().toString().trim(),
                     Sectiones.getText().toString().trim()));
 
            /* Todo: Save the data here to firebase */
@@ -120,7 +120,7 @@ public class Binary extends AppCompatDialogFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_binary, container, false);
 
-        myAdapter = new PersonAdapter(getContext(), ApplicationClass.materias);
+        myAdapter = new PersonAdapter(getContext(), ApplicationClass.materiasatt);
         classtup = view.findViewById(R.id.classtup);
         Sectiones = view.findViewById(R.id.Sectiones);
         fragmentManager = getParentFragmentManager();
