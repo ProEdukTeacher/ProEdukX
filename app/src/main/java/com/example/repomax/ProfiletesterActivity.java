@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,16 +19,21 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.Objects;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfiletesterActivity extends AppCompatActivity {
 
     ViewPager viewPager;
     TabLayout tabLayout;
     FragmentManager fragmentManager;
+    CircleImageView profilepic;
+    BottomSheetDialog bottomSheetDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +41,22 @@ public class ProfiletesterActivity extends AppCompatActivity {
         setContentView(R.layout.profiletester);
 
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+    profilepic = findViewById(R.id.userPFP);
+    profilepic.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            bottomSheetDialog = new BottomSheetDialog(ProfiletesterActivity.this, R.style.BottomSheetTheme);
+
+
+            View sheetview= LayoutInflater.from(getApplicationContext()).inflate(R.layout.bottomsheet,null, false);
+
+            bottomSheetDialog.setContentView(sheetview);
+            bottomSheetDialog.show();
+        }
+    });
+
+
     // Asign variable
         viewPager = findViewById(R.id.view_pager_pf);
         tabLayout = findViewById(R.id.tab_layout_pf);
