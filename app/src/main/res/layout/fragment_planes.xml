@@ -17,7 +17,7 @@
         android:layout_marginLeft="-5dp"
         android:layout_marginRight="-5dp"
         android:background="@drawable/selectedgreen"
-        android:text="Añadir Nueva Clase"
+        android:text="@string/a_adir_nueva_clase"
         android:textColor="#ffffff" />
 
 

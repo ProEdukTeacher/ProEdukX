@@ -133,6 +133,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             switch (item.getItemId()) {
 
 
+
+
                 case R.id.nav_home:
 
                     Log.i("Menu_drawer_tag", "Hote item is clicked");
@@ -195,6 +197,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    private void goToSettings() {
+
+        Intent intent = new Intent(HomeActivity.this, ProfiletesterActivity.class);
+        intent.putExtra("Settings", "Settings");
+        startActivity(intent);
+
+    }
+
     private void getUserInformation() {
 
         mDatabase.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -250,6 +260,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(getApplicationContext(), "Presionaste Buscar", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.settings) {
+            goToSettings();
 
             Toast.makeText(getApplicationContext(), "Presionaste Configuración", Toast.LENGTH_SHORT).show();
         } else if (actionBarDrawerToggle.onOptionsItemSelected(item)) {

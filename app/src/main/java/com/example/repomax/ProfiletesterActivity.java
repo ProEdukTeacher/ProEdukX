@@ -29,7 +29,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfiletesterActivity extends AppCompatActivity {
 
-    ViewPager viewPager;
+    ViewPager viewPagerz;
     TabLayout tabLayout;
     FragmentManager fragmentManager;
     CircleImageView profilepic;
@@ -58,7 +58,7 @@ public class ProfiletesterActivity extends AppCompatActivity {
 
 
     // Asign variable
-        viewPager = findViewById(R.id.view_pager_pf);
+        viewPagerz = findViewById(R.id.view_pager_pf);
         tabLayout = findViewById(R.id.tab_layout_pf);
         fragmentManager = this.getSupportFragmentManager();
 
@@ -70,11 +70,11 @@ public class ProfiletesterActivity extends AppCompatActivity {
         adapter.addFragment(new SettingFragment(), "Settings");
         adapter.addFragment(new SubscriptionFragment(), "Subscription");
     //Set adapter
-        viewPager.setAdapter(adapter);
+        viewPagerz.setAdapter(adapter);
 
     //connect with tab layout
 
-        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setupWithViewPager(viewPagerz);
 
     // Initialize Arraylist
         ArrayList<String> arrayList = new ArrayList<>();

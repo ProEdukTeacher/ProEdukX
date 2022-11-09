@@ -2,35 +2,34 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp"
-    android:fillViewport="true"
     android:background="@drawable/bottomsheet_design"
-    >
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/handle"
-            android:layout_gravity="center_horizontal"/>
-
-
-
+            android:contentDescription="Handle Item" />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cambiar Icono"
-            android:textStyle="bold"
-            android:textColor="@color/black"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:textSize="20sp"/>
+            android:text="Cambiar Icono"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <View
 
             android:layout_width="match_parent"
@@ -43,11 +42,10 @@
             android:background="#D9D9D9" />
 
 
-
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,35 +54,30 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:gravity="center_horizontal"
-                    >
+                    android:orientation="horizontal">
 
 
                     <ImageView
 
                         android:layout_width="110dp"
                         android:layout_height="126dp"
-                        android:src="@drawable/i1"
                         android:layout_margin="10dp"
-                        />
+                        android:src="@drawable/i1" />
 
                     <ImageView
 
                         android:layout_width="110dp"
                         android:layout_height="126dp"
-                        android:src="@drawable/i2"
                         android:layout_margin="10dp"
-                        />
+                        android:src="@drawable/i2" />
 
                     <ImageView
 
                         android:layout_width="110dp"
                         android:layout_height="126dp"
-                        android:src="@drawable/i3"
                         android:layout_margin="10dp"
-                        />
-
+                        android:src="@drawable/i3" />
 
 
                 </LinearLayout>
@@ -93,104 +86,89 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:gravity="center_horizontal"
-                    >
+                    android:orientation="horizontal">
 
                     <ImageView
 
                         android:layout_width="110dp"
                         android:layout_height="126dp"
-                        android:src="@drawable/i4"
                         android:layout_margin="10dp"
-                        />
+                        android:src="@drawable/i4" />
 
                     <ImageView
 
                         android:layout_width="110dp"
                         android:layout_height="126dp"
-                        android:src="@drawable/i5"
                         android:layout_margin="10dp"
-                        />
+                        android:src="@drawable/i5" />
 
                     <ImageView
 
                         android:layout_width="110dp"
                         android:layout_height="126dp"
-                        android:src="@drawable/i6"
                         android:layout_margin="10dp"
-                        />
-
+                        android:src="@drawable/i6" />
 
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:gravity="center_horizontal"
-                    >
+                    android:orientation="horizontal">
 
                     <ImageView
 
                         android:layout_width="110dp"
                         android:layout_height="126dp"
-                        android:src="@drawable/i7"
                         android:layout_margin="10dp"
-                        />
-                    <ImageView
-
-                        android:layout_width="110dp"
-                        android:layout_height="126dp"
-                        android:src="@drawable/i12"
-                        android:layout_margin="10dp"
-                        />
+                        android:src="@drawable/i7" />
 
                     <ImageView
 
                         android:layout_width="110dp"
                         android:layout_height="126dp"
-                        android:src="@drawable/i8"
                         android:layout_margin="10dp"
-                        />
+                        android:src="@drawable/i12" />
 
+                    <ImageView
 
-
+                        android:layout_width="110dp"
+                        android:layout_height="126dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/i8" />
 
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:gravity="center_horizontal"
-                    >
+                    android:orientation="horizontal">
 
                     <ImageView
 
                         android:layout_width="110dp"
                         android:layout_height="126dp"
-                        android:src="@drawable/i16"
                         android:layout_margin="10dp"
-                        />
+                        android:src="@drawable/i16" />
 
                     <ImageView
 
                         android:layout_width="110dp"
                         android:layout_height="126dp"
-                        android:src="@drawable/i18"
                         android:layout_margin="10dp"
-                        />
+                        android:src="@drawable/i18" />
+
                     <ImageView
 
                         android:layout_width="110dp"
                         android:layout_height="126dp"
-                        android:src="@drawable/i19"
                         android:layout_margin="10dp"
-                        />
-
-
-
+                        android:src="@drawable/i19" />
 
 
                 </LinearLayout>
@@ -199,33 +177,10 @@
             </LinearLayout>
 
 
-
         </ScrollView>
 
 
-
-
-
-
-
-
-
-
-
     </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

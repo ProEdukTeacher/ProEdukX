@@ -12,7 +12,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="190dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="-30dp"
         android:background="@drawable/roundedbanner">
 
@@ -32,7 +31,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="-5dp"
             android:fontFamily="@font/poppins"
-            android:text="¡Bienvenidos!"
+            android:text="@string/bienvenidos"
             android:textAllCaps="true"
             android:textColor="#ffff"
             android:textSize="26sp"
@@ -61,7 +60,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="@font/poppins"
-                        android:text="Registrarse"
+                        android:text="@string/registrarse"
                         android:textColor="#00a5ff"
                         android:textSize="30sp"
                         android:textStyle="bold" />
@@ -69,70 +68,70 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nombre"
+                        android:text="@string/nombre"
                         android:textColor="#00a5ff"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
 
 
                     <EditText
                         android:id="@+id/username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Provea su nombre" />
+                        android:hint="@string/provea_su_nombre" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Apellidos"
+                        android:text="@string/apellidos"
                         android:textColor="#00a5ff"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
                     <EditText
                         android:id="@+id/lastnames"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Provea sus apellidos" />
+                        android:hint="@string/provea_sus_apellidos" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="E-mail"
+                        android:text="@string/e_mail"
                         android:textColor="#00a5ff"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/getEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress"
-                        android:hint="Provea su correo electrónico" />
+                        android:hint="@string/provea_su_correo_electr_nico" />
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Contraseña"
+                        android:text="@string/contrase_a"
                         android:textColor="#00a5ff"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/getPass"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Escriba su contraseña"
+                        android:hint="@string/escriba_su_contrase_a"
                         android:inputType="textPassword" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Confirme Contraseña"
+                        android:text="@string/confirme_contrase_a"
                         android:textColor="#00a5ff"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         />
 
                     <EditText
                         android:id="@+id/getPassc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Escriba su contraseña"
+                        android:hint="@string/escriba_su_contrase_a"
                         android:inputType="textPassword" />
 
                     <LinearLayout
@@ -149,7 +148,7 @@
                             android:background="@android:drawable/editbox_background"
                             android:drawableEnd="@drawable/ic_downarrows"
                             android:gravity="center_vertical"
-                            android:hint="Ingresar Pueblo"
+                            android:hint="@string/ingresar_pueblo"
                             android:paddingStart="10dp"
                             android:paddingEnd="10dp"
                             tools:ignore="UseCompatTextViewDrawableXml" />
@@ -162,7 +161,7 @@
                             android:background="@android:drawable/editbox_background"
                             android:drawableEnd="@drawable/ic_downarrows"
                             android:gravity="center_vertical"
-                            android:text="¿Cómo nos encontró?"
+                            android:text="@string/c_mo_nos_encontr"
 
 
                             tools:ignore="UseCompatTextViewDrawableXml" />
@@ -199,7 +198,7 @@
                             android:background="@android:drawable/editbox_background"
                             android:drawableEnd="@drawable/ic_downarrows"
                             android:gravity="center_vertical"
-                            android:hint="Provea su edad"
+                            android:hint="@string/provea_su_edad"
                             android:paddingStart="10dp"
                             android:paddingEnd="10dp"
                             tools:ignore="UseCompatTextViewDrawableXml" />
@@ -212,7 +211,7 @@
                             android:background="@android:drawable/editbox_background"
                             android:drawableEnd="@drawable/ic_downarrows"
                             android:gravity="center_vertical"
-                            android:hint="Años como docente"
+                            android:hint="@string/a_os_de_docencia"
                             android:paddingStart="10dp"
                             android:paddingEnd="10dp"
                             tools:ignore="UseCompatTextViewDrawableXml" />
@@ -238,16 +237,16 @@
                         android:id="@+id/pruebita"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nivel Academico que enseña"
+                        android:text="@string/nivel_academico_que_ense_a"
                         android:textColor="#00a5ff"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/muestrame"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/custom_input"
-                        android:hint="Seleccione Nivel(es)"
+                        android:hint="@string/seleccione_nivel_es"
                         android:padding="12dp"
                         android:scrollbarAlwaysDrawVerticalTrack="false"
                         android:layout_marginTop="10dp"
@@ -260,7 +259,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/changeag_btn"
-                        android:hint="Registrar Datos" />
+                        android:hint="@string/registrar_datos" />
 
 
 

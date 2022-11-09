@@ -13,12 +13,11 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+
             android:background="@color/cardview_light_background"
             app:cardCornerRadius="20dp"
-
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp"
-
 
 
             app:layout_constraintBottom_toBottomOf="parent"
@@ -49,8 +48,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:layout_marginTop="20dp"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
                         <TextView
@@ -59,7 +58,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:text="Nombre"
+                            android:text="@string/nombre"
                             android:textColor="#182693"
                             android:textSize="18sp" />
 
@@ -72,7 +71,7 @@
                             android:layout_weight="1"
                             android:background="@null"
                             android:focusable="false"
-                            android:text="Jadiel Estrada Adorno"
+                            android:text=""
                             android:textAlignment="viewEnd"
                             android:textColor="#5B5B5B"
                             android:textSize="18sp" />
@@ -100,7 +99,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:text="Email"
+                            android:text="@string/e_mail"
                             android:textColor="#182693"
                             android:textSize="18sp" />
 
@@ -112,7 +111,7 @@
                             android:layout_weight="1"
                             android:background="@null"
                             android:focusable="false"
-                            android:text="jadiedgi@gmail.com"
+                            android:text=""
                             android:textAlignment="viewEnd"
                             android:textColor="#5B5B5B"
                             android:textSize="18sp" />
@@ -141,7 +140,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:text="Nivel Academico"
+                            android:text="@string/nivel_academico"
                             android:textColor="#182693"
                             android:textSize="18sp" />
 
@@ -153,7 +152,7 @@
                             android:layout_weight="1"
                             android:background="@null"
                             android:focusable="false"
-                            android:text="Escuela Intermedia"
+                            android:text=""
                             android:textAlignment="viewEnd"
                             android:textColor="#5B5B5B"
                             android:textSize="18sp" />
@@ -169,6 +168,7 @@
                         android:layout_marginTop="6dp"
                         android:layout_marginEnd="10dp"
                         android:background="#D9D9D9" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -177,13 +177,14 @@
 
                         <TextView
                             android:id="@+id/EdadUser"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:text="Edad"
+                            android:text="@string/edad"
                             android:textColor="#182693"
                             android:textSize="18sp" />
+
                         <TextView
                             android:id="@+id/text_viewpf"
                             android:layout_width="wrap_content"
@@ -192,11 +193,10 @@
                             android:background="@android:drawable/editbox_background"
                             android:drawableEnd="@drawable/ic_downarrows"
                             android:gravity="center_vertical"
-                            android:hint="Provea su edad"
+                            android:hint=""
                             android:paddingStart="10dp"
                             android:paddingEnd="10dp"
                             tools:ignore="UseCompatTextViewDrawableXml" />
-
 
 
                     </LinearLayout>
@@ -210,6 +210,7 @@
                         android:layout_marginTop="6dp"
                         android:layout_marginEnd="10dp"
                         android:background="#D9D9D9" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -218,11 +219,11 @@
 
                         <TextView
                             android:id="@+id/townuser"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:text="Pueblo"
+                            android:text="@string/pueblo"
                             android:textColor="#182693"
                             android:textSize="18sp" />
 
@@ -234,12 +235,13 @@
                             android:background="@android:drawable/editbox_background"
                             android:drawableEnd="@drawable/ic_downarrows"
                             android:gravity="center_vertical"
-                            android:hint="Provea el pueblo"
+                            android:hint=""
                             android:paddingStart="10dp"
                             android:paddingEnd="10dp"
                             tools:ignore="UseCompatTextViewDrawableXml" />
 
                     </LinearLayout>
+
                     <View
                         android:id="@+id/DivLine5"
                         android:layout_width="match_parent"
@@ -249,6 +251,7 @@
                         android:layout_marginTop="6dp"
                         android:layout_marginEnd="10dp"
                         android:background="#D9D9D9" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -257,11 +260,11 @@
 
                         <TextView
                             android:id="@+id/whereknowuser"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:text="¿Cómo nos encontró?"
+                            android:text="@string/c_mo_nos_encontr"
                             android:textColor="#182693"
                             android:textSize="18sp" />
 
@@ -273,12 +276,13 @@
                             android:background="@android:drawable/editbox_background"
                             android:drawableEnd="@drawable/ic_downarrows"
                             android:gravity="center_vertical"
-                            android:hint="Provea una opcion"
+                            android:hint=""
                             android:paddingStart="10dp"
                             android:paddingEnd="10dp"
                             tools:ignore="UseCompatTextViewDrawableXml" />
 
                     </LinearLayout>
+
                     <View
                         android:id="@+id/DivLine6"
                         android:layout_width="match_parent"
@@ -288,6 +292,7 @@
                         android:layout_marginTop="6dp"
                         android:layout_marginEnd="10dp"
                         android:background="#D9D9D9" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -296,11 +301,11 @@
 
                         <TextView
                             android:id="@+id/years"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:text="Años de docencia"
+                            android:text="@string/a_os_de_docencia"
                             android:textColor="#182693"
                             android:textSize="18sp" />
 
@@ -312,7 +317,7 @@
                             android:background="@android:drawable/editbox_background"
                             android:drawableEnd="@drawable/ic_downarrows"
                             android:gravity="center_vertical"
-                            android:hint="Seleccionar"
+                            android:hint=""
                             android:paddingStart="10dp"
                             android:paddingEnd="10dp"
                             tools:ignore="UseCompatTextViewDrawableXml" />
@@ -326,7 +331,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="50dp"
-                        android:text="Edit Profile"
+                        android:text="@string/edit_profile"
                         android:textColor="#ffffff"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -334,15 +339,7 @@
             </ScrollView>
 
 
-
-
-
-
         </androidx.cardview.widget.CardView>
-
-
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

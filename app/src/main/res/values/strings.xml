@@ -201,5 +201,31 @@
 
     <string name="web_client_id">733447301089-ejgndj16tauhrh2ae0pe72g80nsj9mkr.apps.googleusercontent.com</string>
     <string name="qu_edad_tiene">¿Qué edad tiene?</string>
+    <string name="skip">SKIP</string>
+    <string name="selec_opc">Seleccione una opción</string>
+    <string name="search">Search...</string>
+    <string name="nivel_academico">Nivel Academico</string>
+    <string name="edad">Edad</string>
+    <string name="provea_su_edad">Provea su edad</string>
+    <string name="pueblo">Pueblo</string>
+    <string name="provea_el_pueblo">Provea el pueblo</string>
+    <string name="c_mo_nos_encontr">¿Cómo nos encontró?</string>
+    <string name="provea_una_opcion">Provea una opcion</string>
+    <string name="a_os_de_docencia">Años de docencia</string>
+    <string name="seleccionar">Seleccionar</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="a_adir_nueva_clase">Añadir Nueva Clase</string>
+    <string name="bienvenidos">¡Bienvenidos!</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="provea_su_nombre">Provea su nombre</string>
+    <string name="provea_sus_apellidos">Provea sus apellidos</string>
+    <string name="provea_su_correo_electr_nico">Provea su correo electrónico</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="escriba_su_contrase_a">Escriba su contraseña</string>
+    <string name="confirme_contrase_a">Confirme Contraseña</string>
+    <string name="ingresar_pueblo">Ingresar Pueblo</string>
+    <string name="nivel_academico_que_ense_a">Nivel Academico que enseña</string>
+    <string name="seleccione_nivel_es">Seleccione Nivel(es)</string>
+    <string name="registrar_datos">Registrar Datos</string>
 
 </resources>
