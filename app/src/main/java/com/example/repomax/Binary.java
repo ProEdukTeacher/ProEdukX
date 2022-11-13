@@ -18,6 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,6 +35,7 @@ public class Binary extends AppCompatDialogFragment {
 
     private Context mContext;
     private PersonAdapter adapter;
+
 
 
 
@@ -113,6 +115,7 @@ public class Binary extends AppCompatDialogFragment {
     Button addud;
     Planes planes;
     FragmentManager fragmentManager;
+    SwitchCompat switchCompat;
 
 
     @Nullable
@@ -121,6 +124,7 @@ public class Binary extends AppCompatDialogFragment {
         View view = inflater.inflate(R.layout.activity_binary, container, false);
 
         myAdapter = new PersonAdapter(getContext(), ApplicationClass.materiasatt);
+
         classtup = view.findViewById(R.id.classtup);
         Sectiones = view.findViewById(R.id.Sectiones);
         fragmentManager = getParentFragmentManager();

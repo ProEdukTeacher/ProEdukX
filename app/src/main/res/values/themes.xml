@@ -46,5 +46,29 @@
 
         <item name="android:background">@android:color/transparent</item>
     </style>
+    
+    <style name="nightModeSwitch" parent="Theme.AppCompat.Light">
+        
+        <item name="colorControlActivated">@color/night_mode</item>
+        <item name="colorSwitchThumbNormal">#FFFFFF</item>
+        <item name="android:colorForeground">#99FFFFFF</item>
+        
+    </style>
+
+    <style name="notificationSwitch" parent="Theme.AppCompat.Light">
+
+        <item name="colorControlActivated">@color/notifications</item>
+        <item name="colorSwitchThumbNormal">#FFFFFF</item>
+        <item name="android:colorForeground">#99FFFFFF</item>
+
+    </style>
+
+    <style name="privateAccountSwitch" parent="Theme.AppCompat.Light">
+
+        <item name="colorControlActivated">@color/private_account</item>
+        <item name="colorSwitchThumbNormal">#FFFFFF</item>
+        <item name="android:colorForeground">#99FFFFFF</item>
+
+    </style>
 
 </resources>

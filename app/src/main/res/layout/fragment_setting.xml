@@ -3,12 +3,409 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".SettingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/workbitch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/pexeline"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/roundback_white_10_20"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/NightModeIcon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/round_back_night_mode"
+                            android:padding="12dp"
+                            android:src="@drawable/nightmode" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/NightModeIcon"
+                            android:text="Modo Nocturno"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/swtichnight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:switchMinWidth="50dp"
+                            android:checked="false"
+                            android:theme="@style/nightModeSwitch" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <ImageView
+                            android:id="@+id/NotificationIcon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/round_back_notifications"
+                            android:padding="12dp"
+                            android:src="@drawable/notificationbell" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/NotificationIcon"
+                            android:text="Notificaciones"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:switchMinWidth="50dp"
+                            android:theme="@style/notificationSwitch" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <ImageView
+                            android:id="@+id/PremiumIcon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/round_back_private_account"
+                            android:padding="12dp"
+                            android:src="@drawable/premium" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/PremiumIcon"
+                            android:text="Cuenta Premium"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"/>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/roundback_white_10_20"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <ImageView
+                            android:id="@+id/SecurityIcon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/round_back_night_mode"
+                            android:padding="12dp"
+                            android:src="@drawable/shield" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/SecurityIcon"
+                            android:text="Seguridad y Privacidad"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"/>
+
+
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/ConPc"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <ImageView
+                            android:id="@+id/laptopIcon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/round_back_private_account"
+                            android:padding="12dp"
+                            android:src="@drawable/laptop" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/laptopIcon"
+                            android:text="Conectarse en PC"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"/>
+
+
+
+
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <ImageView
+                            android:id="@+id/LanguageIcon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/round_back_notifications"
+                            android:padding="12dp"
+                            android:src="@drawable/language" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/LanguageIcon"
+                            android:text="Idioma"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"/>
+
+
+
+                    </RelativeLayout>
+
+
+
+
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/roundback_white_10_20"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/MessageIcon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/round_back_notifications"
+                    android:padding="12dp"
+                    android:src="@drawable/mail" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/MessageIcon"
+                    android:text="Envíenos un Mensaje"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/AboutUsIcon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/round_back_night_mode"
+                        android:padding="12dp"
+                        android:src="@drawable/personal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@+id/AboutUsIcon"
+                        android:text="Acerca de Nosotros"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/faqIcon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/round_back_private_account"
+                        android:padding="12dp"
+                        android:src="@drawable/faq" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@+id/faqIcon"
+                        android:text="FAQs"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/roundback_white_10_20"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/deleteIcon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="12dp"
+                        android:src="@drawable/deleteaccount" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@+id/deleteIcon"
+                        android:text="Eliminar Cuenta"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
 
 </FrameLayout>

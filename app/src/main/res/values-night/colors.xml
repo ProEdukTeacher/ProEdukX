@@ -7,9 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#262938</color>
-    <color name="colorPrimaryDark">#181A24</color>
-    <color name="colorAccent">#FF4081</color>
+
+
     <color name="Green">#005406</color>
     <color name="Pink">#e362dc</color>
     <color name="transparent">#cccccc</color>
@@ -30,5 +29,8 @@
     <color name="active">#50C2C9</color>
 
     //For the DarkMode I guess
-    <color name="textColor">#000000</color>
+    <color name="textColor">#FFFFFF</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#171717</color>
+    <color name="colorAccent">#FFFFFF</color>
 </resources>
